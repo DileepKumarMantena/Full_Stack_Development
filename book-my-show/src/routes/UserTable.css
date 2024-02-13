@@ -1,0 +1,151 @@
+.header-image img {
+  height: 55px;
+  width: 100px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  background-color: black;
+  color: white;
+}
+
+.header-title {
+  align-items: center;
+}
+
+.header-image {
+  width: 40%;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+.movies {
+  margin-left: 50px;
+  padding-top: 20px;
+  width: 35%;
+  text-align: center;
+  justify-content: center;
+}
+
+.movies button {
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 75px;
+}
+
+.theaters {
+  padding-top: 20px;
+  text-align: center;
+  width: 35%;
+}
+
+.theaters button {
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 75px;
+}
+
+.book-now {
+  padding-top: 20px;
+  width: 35%;
+  text-align: center;
+  margin-right: 50px;
+}
+
+.book-now input {
+  height: 40px;
+}
+
+.book-now button {
+  background-color: orangered;
+  border-style: double;
+  height: 50px;
+  width: 150px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer img {
+  height: 90px;
+  width: 40%;
+  align-content: center;
+  margin-left: 30%;
+  margin-top: 40px;
+}
+
+.footer {
+  align-content: center;
+  justify-content: center;
+}
+
+.footer-icons img {
+  height: 30px;
+  width: 180px;
+}
+
+.footer-icons {
+  margin-left: 20%;
+}
+
+.footer-para {
+  text-align: center;
+  background-color: black;
+  color: white;
+  border-left: 50px;
+  border-right: 50px;
+}
+
+.movies h1 {
+  color: orangered;
+}
+
+.theaters h1 {
+  color: orangered;
+}
+
+.book-now h1 {
+  color: orangered;
+}
+
+.App {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  padding: 10px;
+  width: 35%;
+}
+
+.row h3 {
+  color: black;
+  margin: 45px;
+}
+
+.Gallery {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 50px;
+}
+
+.split {
+  display: flex;
+}
+
+
+.Gallery h1 {
+  color: black;
+  margin-top: 2rem;
+}
+
+.title {
+  width: 40%;
+}
