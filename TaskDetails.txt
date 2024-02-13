@@ -1,0 +1,4 @@
+-Java Script folder has JavaScript code 
+-Html folder has html code
+-my-react-app is student form
+-api-app is new app trying for api calling
