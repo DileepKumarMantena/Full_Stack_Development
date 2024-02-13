@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+
+<h2 id="heading">Original Heading</h2>
+
+<script>
+    // Create a new paragraph element
+    var paragraph = document.createElement("p");
+
+    // Set the text content of the paragraph
+    paragraph.textContent = "This is a dynamically created paragraph.";
+
+    // Change the style of the paragraph
+    paragraph.style.color = "blue";
+    paragraph.style.fontWeight = "bold";
+
+    // Append the paragraph to the document body
+    document.body.appendChild(paragraph);
+
+    // Update the text of the original heading
+    var heading = document.getElementById("heading");
+    heading.textContent = "Updated Heading";
+</script>
+
+</body>
+</html>
