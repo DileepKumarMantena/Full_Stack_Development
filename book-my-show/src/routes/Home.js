@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import data from "./components/images.json";
-// import image form "./src/images/bookmyshow.jpg"
-import Modal from "./components/Model";
+import data from "./images.json";
+import Modal from "./Model";
+import BookingConfirmation from "./BookingConfirmation"; 
+
 import './UserTable.css';
 
 function Home() {
@@ -41,6 +42,13 @@ function Home() {
 
     return (
         <div>
+            {/* Your existing code */}
+            {userRegistration.numberoftickets && userRegistration.phonenumber && (
+                <BookingConfirmation
+                    numberoftickets={userRegistration.numberoftickets}
+                    phonenumber={userRegistration.phonenumber}
+                />
+            )}
 
             <div className="header">
                 <div className="header-image">

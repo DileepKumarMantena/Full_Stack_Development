@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "text": "Bahubali",
+            "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwaRrCJyE4xLpVbSpx3JzRqAddcNkAuJEsKWY-5EaQBUXNX3VXTS-XbVJOqeXN5KBLAtE&usqp=CAU",
+            "id": "first movie"
+        },
+        {
+            "text": "RRR",
+            "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbt_2rPX6u1PqsNuNxcttiGTn6jBqDmHRwZQ&usqp=CAU",
+            "id": "second movie"
+        },
+        {
+            "text": "Avatar 2",
+            "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_SVy5IQI2V0IEH2fXvRZfapiAvki4Unj-iw&usqp=CAU",
+            "id": "third movie"
+        },
+        {
+            "text": "Money Heist",
+            "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMe35aKDpRNnqaNAtvxMf4SaqBDIk4eWnkRw&usqp=CAU",
+            "id": "fourth movie"
+        }
+    ]
+}
