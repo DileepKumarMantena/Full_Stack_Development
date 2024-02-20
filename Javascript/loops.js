@@ -26,6 +26,11 @@ const oddNumbers = [];
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] % 2 === 0) {
     evenNumbers.push(numbers[i]);
+    if (numbers[i]==6){
+        console.log('Number is 6')
+        break;
+    }
+    
   } else {
     oddNumbers.push(numbers[i]);
   }
