@@ -7,34 +7,34 @@
 // // //     console.log('A is Odd')
 // // // }
 
-// let b=[1,2,7,8]
+let b=[1,2,7,8]
 
-// for (let i=0 ; i < b.length; i++) {
-//     if (b[i] %2==0){
-//         console.log('i is even',i)
-//     }
-//     else {
-//         console.log('i is odd',i)
-//     }
-// }
-
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-const evenNumbers = [];
-const oddNumbers = [];
-
-for (let i = 0; i < numbers.length; i++) {
-  if (numbers[i] % 2 === 0) {
-    evenNumbers.push(numbers[i]);
-    if (numbers[i]==6){
-        console.log('Number is 6')
-        break;
+for (let i=0 ; i < b.length; i++) {
+    if (b[i] %2==0){
+        console.log('i is even',i)
     }
-    
-  } else {
-    oddNumbers.push(numbers[i]);
-  }
+    else {
+        console.log('i is odd',i)
+    }
 }
 
-console.log("Even numbers:", evenNumbers);
-console.log("Odd numbers:", oddNumbers);
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// const evenNumbers = [];
+// const oddNumbers = [];
+
+// for (let i = 0; i < numbers.length; i++) {
+//   if (numbers[i] % 2 === 0) {
+//     evenNumbers.push(numbers[i]);
+//     if (numbers[i]==6){
+//         console.log('Number is 6')
+//         break;
+//     }
+    
+//   } else {
+//     oddNumbers.push(numbers[i]);
+//   }
+// }
+
+// console.log("Even numbers:", evenNumbers);
+// console.log("Odd numbers:", oddNumbers);
