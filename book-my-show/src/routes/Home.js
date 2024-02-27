@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import data from "./images.json";
 import Modal from "./Model";
-import BookingConfirmation from "./BookingConfirmation"; 
+import {useNavigate} from 'react-router-dom'
 
 import './UserTable.css';
 
+
 function Home() {
     const [clickedImg, setClickedImg] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(null);
+    const navigate=useNavigate()
 
     const [userRegistration, setUserRegistrartion] = useState({
         numberoftickets: "",
@@ -23,7 +24,6 @@ function Home() {
     };
 
     const handleClick = (item, index) => {
-        setCurrentIndex(index);
         setClickedImg(item.link);
     };
 
@@ -38,18 +38,12 @@ function Home() {
             numberoftickets: "",
             phonenumber: ""
         });
+        
+        navigate('/bookingconfirmation', { state: { prop1:userRegistration.numberoftickets,prop2:userRegistration.phonenumber}});
     };
 
     return (
         <div>
-            {/* Your existing code */}
-            {userRegistration.numberoftickets && userRegistration.phonenumber && (
-                <BookingConfirmation
-                    numberoftickets={userRegistration.numberoftickets}
-                    phonenumber={userRegistration.phonenumber}
-                />
-            )}
-
             <div className="header">
                 <div className="header-image">
                     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8b466e9f-26b4-4f40-a5ff-7eaa4b314014/dfady0s-54ea7126-3a05-4619-b38f-fb23a2bcb887.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhiNDY2ZTlmLTI2YjQtNGY0MC1hNWZmLTdlYWE0YjMxNDAxNFwvZGZhZHkwcy01NGVhNzEyNi0zYTA1LTQ2MTktYjM4Zi1mYjIzYTJiY2I4ODcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.G49pFsWPgF1-5CMAl_jXaxiqZEi_EwMmQ3VnM40CkkY" alt=" "

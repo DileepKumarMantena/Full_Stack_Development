@@ -1,0 +1,57 @@
+/* BookingConfirmation.css */
+
+.booking-confirmation-container {
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .booking-confirmation-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .booking-confirmation-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .booking-confirmation-info span {
+    font-weight: bold;
+  }
+  
+  .booking-confirmation-info:first-child {
+    margin-top: 0;
+  }
+  
+  .booking-confirmation-info:last-child {
+    margin-bottom: 0;
+  }
+  
+  .booking-confirmation-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .booking-confirmation-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    .booking-confirmation-container {
+      width: 90%;
+    }
+  }
+  

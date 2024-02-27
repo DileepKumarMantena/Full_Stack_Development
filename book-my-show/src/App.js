@@ -2,14 +2,16 @@
 import './App.css';
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from '../src/routes/Home';
-import Home1 from '../src/routes/Home1';
+import BookingConfirmation from '../src/routes/BookingConfirmation';
 
 function App() {
   return (
     <Router>
       <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/home1" element={<Home1 />}></Route>
+      <Route path="/bookingconfirmation" element={<BookingConfirmation />}></Route>
+
+
 
 
       </Routes>
