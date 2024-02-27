@@ -1,0 +1,8 @@
+-Java Script folder has JavaScript code 
+-Html folder has html code
+-my-react-app is student registration react app
+-api-app is getting details from an api react app
+-book-my-show is a dummy book my show app in react
+-student-mgmt-app is a student crud app in react
+-CodeExample folder consits of html,css,js codes
+-Django_React folder consits of Django code 
