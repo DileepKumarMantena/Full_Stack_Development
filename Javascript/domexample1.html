@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DOM Manipulation Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Change text content
+    $('#myParagraph').text('New Text Content');
+    $('#NewParagraph').text('New Content');
+    
+    // Apply CSS styles
+    $('#myParagraph').css({
+        'color': 'blue',
+        'font-size': '18px',
+        'font-weight': 'bold'
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="myParagraph">Original Text Content</p>
+<p id ="NewParagraph"> New Paragraph contect </p>
+
+</body>
+</html>
