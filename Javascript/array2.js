@@ -5,6 +5,7 @@ const matrix = [
     [7, 8, 9]
 ];
 
+console.log(matrix[2][2])
 // Accessing elements in a 2D array
 console.log(matrix[0][1]); // Output: 2
 

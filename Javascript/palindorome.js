@@ -1,17 +1,17 @@
-// function palindrome(str){
-//     let rev =str.split("").reverse().join("");
-//     if (rev == str){
-//         return "It is a Palindrome "
-//     }
-//     else {
-//         return "It is not a palindrome"
-//     }
-// }
+function palindrome(str){
+    let rev =str.split("").reverse().join("");
+    if (rev == str){
+        return "It is a Palindrome "
+    }
+    else {
+        return "It is not a palindrome"
+    }
+}
 
-// let str1="madam"
-// let str2='Welcome'
-// console.log(palindrome(str1))
-// console.log(palindrome(str2))
+let str1="madam"
+let str2='Welcome'
+console.log(palindrome(str1))
+console.log(palindrome(str2))
 
 // let str3= "This is js"
 // console.log(str3.split("").reverse().join(""))

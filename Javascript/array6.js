@@ -1,13 +1,13 @@
-// let oddArray = []
-// let evenArray= []
-//   for (i = 0; i < 10; i++){
-//     if (i % 2 === 0) {
-//       evenArray.push(i)
-//     }
-//     else oddArray.push(i);
-// }
-// console.log("odd Numbers:", oddArray)
-// console.log("even Numbers:", evenArray)
+let oddArray = []
+let evenArray= []
+  for (i = 0; i < 10; i++){
+    if (i % 2 === 0) {
+      evenArray.push(i)
+    }
+    else oddArray.push(i);
+}
+console.log("odd Numbers:", oddArray)
+console.log("even Numbers:", evenArray)
 
 
 let a = [1, 8, 7, 9, 1]
