@@ -6,7 +6,7 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=10') 
+    fetch('https://randomuser.me/api/?results=10')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
