@@ -18,8 +18,6 @@ function WeatherApp() {
     };
 
     changeBackground();
-
-    // Cleanup function
     return () => {
       document.body.classList.remove('high-humidity');
     };
