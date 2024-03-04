@@ -1,12 +1,21 @@
-const object={
-    'name':"Deepak",
-    'age ':35
+let object={
+    'name':"deepak",
+    'Age':35,
+    'Is_avliable':true
 }
 
-const array=[1,2,3]
+console.log(object['Age'])
 
-console.log(typeof(object))
-console.log(object["age "])
+let a=[1,2,3]//mutable 
 
-console.log(Object.keys(object))
+console.log(a[1])
+
+object['Is_avliable']=false
+
+console.log(object)
+
+console.log(Object.keys(object));
+
 console.log(Object.values(object))
+
+
