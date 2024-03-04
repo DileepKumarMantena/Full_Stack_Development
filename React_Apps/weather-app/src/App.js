@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './WeatherApp.css';
+import React, { useState, useEffect } from 'react';
+import './App.css';
 import axios from 'axios';
 
 function WeatherApp() {
@@ -7,6 +7,23 @@ function WeatherApp() {
   const [country, setCountry] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const changeBackground = () => {
+      if (weatherData && weatherData.main.humidity > 50) {
+        document.body.classList.add('high-humidity');
+      } else {
+        document.body.classList.remove('high-humidity');
+      }
+    };
+
+    changeBackground();
+
+    // Cleanup function
+    return () => {
+      document.body.classList.remove('high-humidity');
+    };
+  }, [weatherData]);
 
   const fetchWeatherData = async () => {
     try {
@@ -27,7 +44,7 @@ function WeatherApp() {
   };
 
   return (
-    <div>
+    <div className="WeatherApp">
       <h1>Weather App</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -40,13 +57,13 @@ function WeatherApp() {
         </label>
         <button type="submit">Get Weather</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       {weatherData && (
-        <div>
+        <div className="weather-info">
           <h2>Weather in {state}, {country}:</h2>
           <p>Description: {weatherData.weather[0].description}</p>
           <p>Temperature: {weatherData.main.temp} °C</p>
-          <p>Humidity: {weatherData.main.humidity} % {weatherData.main.humidity>50 ?"🌞" : "⛄" } </p>
+          <p>Humidity: {weatherData.main.humidity} % {weatherData.main.humidity > 50 ? "🌞" : "⛄"}</p>
         </div>
       )}
     </div>
