@@ -3,6 +3,9 @@
 -my-react-app is student registration react app
 -api-app is getting details from an api react app
 -book-my-show is a dummy book my show app in react
+-hello-world it is a hello world app in react
+-recipe-app it is a recipee app in react
 -student-mgmt-app is a student crud app in react
+-weather app -it is a weather app using backend api
 -CodeExample folder consits of html,css,js codes
 -Django_React folder consits of Django code 
