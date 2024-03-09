@@ -12,5 +12,4 @@ function WeatherInfo({ state, country, weatherData }) {
     </div>
   );
 }
-
 export default WeatherInfo;
