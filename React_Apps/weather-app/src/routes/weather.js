@@ -15,7 +15,6 @@ function WeatherApp() {
   const [backgroundColor, setBackgroundColor] = useState('');
 
   useEffect(() => {
-    // Check if user is already logged in
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setIsLoggedIn(true);
@@ -81,7 +80,7 @@ function WeatherApp() {
   };
 
   return (
-    <div className={`WeatherApp ${backgroundColor}`}>
+    <div className="body.high-humidity-info">
       {!isLoggedIn ? (
         <div>
           <Registration onRegister={handleRegister} />

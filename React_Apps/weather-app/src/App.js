@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<WeatherApp />}></Route>
-      <Route path="/register" element={<Registration />}></Route>
+      <Route path="/" element={<Registration />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/display" element={<WeatherInfo />}></Route>
       </Routes>
