@@ -1,0 +1,19 @@
+/* App.css */
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.button-group button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 100px;
+}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './weather.css';
 import axios from 'axios';
-import WeatherInfo from './display'; // Import the WeatherInfo component
-import Registration from './Registration'; // Import the Registration component
-import Login from './Login'; // Import the Login component
+import Registration from './Registration'; 
+import Login from './Login'; 
+import WeatherPage from './WeatherPage'; // Import the WeatherPage component
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import Router and Route from React Router
 
 function WeatherApp() {
   const [state, setState] = useState('');
@@ -23,11 +24,10 @@ function WeatherApp() {
   }, []);
 
   useEffect(() => {
-    // Set background color based on humidity
     if (weatherData && weatherData.main && weatherData.main.humidity > 50) {
-      setBackgroundColor('high-humidity');
+      setBackgroundColor('red');
     } else {
-      setBackgroundColor('');
+      setBackgroundColor('green');
     }
   }, [weatherData]);
 
@@ -80,35 +80,47 @@ function WeatherApp() {
   };
 
   return (
-    <div className="body.high-humidity-info">
-      {!isLoggedIn ? (
-        <div>
-          <Registration onRegister={handleRegister} />
-          <Login onLogin={handleLogin} />
-          {error && <p className="error">{error}</p>}
-        </div>
-      ) : (
-        <div>
-          <h1>Welcome, {user.username}!</h1>
-          <button onClick={handleLogout}>Logout</button>
-          <h1>Weather App</h1>
-          <form onSubmit={handleSubmit}>
-            <label>
-              State:
-              <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
-            </label>
-            <label>
-              Country:
-              <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
-            </label>
-            <button type="submit">Get Weather</button>
-          </form>
-          {error && <p className="error">{error}</p>}
-          {weatherData && <WeatherInfo state={state} country={country} weatherData={weatherData} />}
-        </div>
-      )}
-    </div>
+    <Router>
+      <div style={{ backgroundColor: backgroundColor }}>
+        <Switch>
+          <Route exact path="/">
+            {!isLoggedIn ? (
+              <div>
+                <Registration onRegister={handleRegister} />
+                <Login onLogin={handleLogin} />
+                {error && <p className="error">{error}</p>}
+              </div>
+            ) : (
+              <div>
+                <h1>Welcome, {user.username}!</h1>
+                <button onClick={handleLogout}>Logout</button>
+                <h1>Weather App</h1>
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    State:
+                    <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+                  </label>
+                  <label>
+                    Country:
+                    <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
+                  </label>
+                  <button type="submit">Get Weather</button>
+                </form>
+                {error && <p className="error">{error}</p>}
+                {weatherData && (
+                  <a href={`/weather/${state}/${country}`}>
+                    Click here to view weather information for {state}, {country}
+                  </a>
+                )}
+              </div>
+            )}
+          </Route>
+          <Route path="/weather/:state/:country">
+            <WeatherPage state={state} country={country} weatherData={weatherData} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
 export default WeatherApp;

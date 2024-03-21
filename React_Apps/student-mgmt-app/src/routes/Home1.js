@@ -1,4 +1,6 @@
 import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import React from 'react';
 
 const Home1 = ({ location }) => {
