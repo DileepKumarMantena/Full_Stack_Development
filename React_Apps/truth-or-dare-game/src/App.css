@@ -1,19 +1,54 @@
-/* App.css */
 .container {
   text-align: center;
   margin-top: 50px;
 }
 
-.button-group button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.card {
-  border: 2px solid #333;
-  padding: 20px;
+.arrow-container {
+  position: relative;
+  width: 100px; /* Adjust the container width */
+  height: 100px; /* Adjust the container height */
+  margin: 0 auto;
+}
+
+.arrow {
+  width: 50px; /* Adjust the width */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 2s ease-in-out;
+}
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button-group {
   margin-top: 20px;
-  min-height: 100px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
 }

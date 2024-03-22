@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
-import Player from '../src/player.js'
-import Card from '../src/card.js'
+import Player from '../src/player.js';
+import Card from '../src/card.js';
+import arrow from '../src/arrow.png';
 
 const truthCards = [
   "What's your biggest fear?",
@@ -22,7 +23,11 @@ const App = () => {
   const [currentCard, setCurrentCard] = useState(null);
   const [cardType, setCardType] = useState('');
   const [customQuestion, setCustomQuestion] = useState('');
-  const [players, setPlayers] = useState(['Dileep', 'Pradeep ', 'Kumar']); // Add more players as needed
+  const [players, setPlayers] = useState(['a','b','c','d','e','f','g']); // Add more players as needed
+  const [isRotating, setIsRotating] = useState(false);
+  const [rotateDegrees, setRotateDegrees] = useState(0);
+
+  const rotateIntervalRef = useRef(null);
 
   const getRandomCard = (cards) => {
     const randomIndex = Math.floor(Math.random() * cards.length);
@@ -31,12 +36,6 @@ const App = () => {
 
   const getRandomPlayerIndex = () => {
     return Math.floor(Math.random() * players.length);
-  };
-
-  const handleNextTurn = () => {
-    const randomPlayerIndex = getRandomPlayerIndex();
-    setCurrentPlayerIndex(randomPlayerIndex);
-    setCurrentCard(null);
   };
 
   const handleSelectType = (type) => {
@@ -53,24 +52,59 @@ const App = () => {
     }
   };
 
+  const startRotation = () => {
+    setIsRotating(true);
+    rotateIntervalRef.current = setInterval(() => {
+      setRotateDegrees((prevDegrees) => prevDegrees + 10); // Increase rotation speed by changing the increment value
+    }, 50); // Adjust rotation speed by changing the interval value
+  };
+
+  const stopRotation = () => {
+    clearInterval(rotateIntervalRef.current);
+    setIsRotating(false);
+    const stopDegrees = rotateDegrees % 360;
+    const stopIndex = Math.floor((stopDegrees / 360) * players.length);
+    setCurrentPlayerIndex(stopIndex);
+  };
+
+  const toggleRotation = () => {
+    if (isRotating) {
+      stopRotation();
+    } else {
+      startRotation();
+    }
+  };
+
   return (
     <div className="container">
       <h1>Truth or Dare</h1>
       <Player name={currentPlayerIndex !== null ? players[currentPlayerIndex] : 'Random Player'} />
       <Card card={currentCard} />
+      <div className="arrow-container">
+        <img
+          src={arrow}
+          alt="Arrow"
+          className={`arrow ${isRotating ? 'rotate' : ''}`}
+          style={{ transform: `rotate(${rotateDegrees}deg)` }}
+          onClick={toggleRotation} // Toggle rotation on arrow click
+        />
+      </div>
       <div className="button-group">
-        <button onClick={handleNextTurn}>Next Turn</button>
-        <button onClick={() => handleSelectType('truth')}>Truth</button>
-        <button onClick={() => handleSelectType('dare')}>Dare</button>
+        <select onChange={(e) => handleSelectType(e.target.value)}>
+          <option value="">Select Type</option>
+          <option value="truth">Truth</option>
+          <option value="dare">Dare</option>
+        </select>
       </div>
       <form onSubmit={handleCustomQuestionSubmit}>
         <input
           type="text"
           value={customQuestion}
           onChange={(e) => setCustomQuestion(e.target.value)}
-          placeholder="Ask a custom question..."
+          placeholder="Ask a Question"
+          disabled={cardType !== ''}
         />
-        <button type="submit">Ask</button>
+        <button type="submit" disabled={cardType !== ''}>Ask</button>
       </form>
     </div>
   );
