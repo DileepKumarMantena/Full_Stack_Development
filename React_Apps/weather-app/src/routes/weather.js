@@ -3,8 +3,8 @@ import './weather.css';
 import axios from 'axios';
 import Registration from './Registration'; 
 import Login from './Login'; 
-import WeatherPage from './WeatherPage'; // Import the WeatherPage component
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import Router and Route from React Router
+import WeatherPage from './WeatherDisplay'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom'; 
 
 function WeatherApp() {
   const [state, setState] = useState('');
@@ -32,14 +32,12 @@ function WeatherApp() {
   }, [weatherData]);
 
   const handleRegister = (userData) => {
-    // Store user data in local storage for simplicity
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
     setIsLoggedIn(true);
   };
 
   const handleLogin = (userData) => {
-    // Perform authentication, in this example, just set user data from local storage
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
@@ -55,7 +53,6 @@ function WeatherApp() {
   };
 
   const handleLogout = () => {
-    // Clear user data from local storage and state
     localStorage.removeItem('user');
     setUser(null);
     setIsLoggedIn(false);
@@ -82,45 +79,42 @@ function WeatherApp() {
   return (
     <Router>
       <div style={{ backgroundColor: backgroundColor }}>
-        <Switch>
-          <Route exact path="/">
-            {!isLoggedIn ? (
-              <div>
-                <Registration onRegister={handleRegister} />
-                <Login onLogin={handleLogin} />
-                {error && <p className="error">{error}</p>}
-              </div>
-            ) : (
-              <div>
-                <h1>Welcome, {user.username}!</h1>
-                <button onClick={handleLogout}>Logout</button>
-                <h1>Weather App</h1>
-                <form onSubmit={handleSubmit}>
-                  <label>
-                    State:
-                    <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
-                  </label>
-                  <label>
-                    Country:
-                    <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
-                  </label>
-                  <button type="submit">Get Weather</button>
-                </form>
-                {error && <p className="error">{error}</p>}
-                {weatherData && (
-                  <a href={`/weather/${state}/${country}`}>
-                    Click here to view weather information for {state}, {country}
-                  </a>
-                )}
-              </div>
-            )}
-          </Route>
-          <Route path="/weather/:state/:country">
-            <WeatherPage state={state} country={country} weatherData={weatherData} />
-          </Route>
-        </Switch>
+        <Route exact path="/">
+          {!isLoggedIn ? (
+            <div>
+              <Registration onRegister={handleRegister} />
+              <Login onLogin={handleLogin} />
+              {error && <p className="error">{error}</p>}
+            </div>
+          ) : (
+            <div>
+              <h1>Welcome, {user.username}!</h1>
+              <button onClick={handleLogout}>Logout</button>
+              <h1>Weather App</h1>
+              <form onSubmit={handleSubmit}>
+                <label>
+                  State:
+                  <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+                </label>
+                <label>
+                  Country:
+                  <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
+                </label>
+                <button type="submit">Get Weather</button>
+              </form>
+              {error && <p className="error">{error}</p>}
+              {weatherData && (
+                <div>
+                  <p>Weather information for {state}, {country}:</p>
+                  <WeatherPage weatherData={weatherData} />
+                </div>
+              )}
+            </div>
+          )}
+        </Route>
       </div>
     </Router>
   );
 }
+
 export default WeatherApp;

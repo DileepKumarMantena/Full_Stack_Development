@@ -1,11 +1,21 @@
+
 import React from 'react';
 
-function handleClick() {
-  console.log('Button clicked');
-}
+const ProductList = () => {
+  const products = [
+    { id: 1, name: 'Product A' },
+    { id: 2, name: 'Product B' },
+    { id: 3, name: 'Product C' },
+    { id: 4, name: 'Product D' },
+  ];
 
-function ButtonClick() {
-  return <button onClick={handleClick}>Click Me</button>;
-}
+  return (
+    <ul>
+      {products.map((product) => (
+        <li key={product.id}>{product.name}</li>
+      ))}
+    </ul>
+  );
+};
 
-export default ButtonClick;
+export default ProductList;

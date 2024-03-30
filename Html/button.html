@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disable Button for a Minute</title>
+    
+    <style>
+        /* CSS styles for the paragraph */
+        .success-message {
+            background-color: #dff0d8; /* Light green background */
+            border: 1px solid #d6e9c6; /* Light green border */
+            color: #3c763d; /* Dark green text color */
+            padding: 15px; /* Padding around the text */
+            border-radius: 5px; /* Rounded corners */
+            margin-top: 20px; /* Spacing from the top */
+        }
+        .invalidationButton[disabled] {
+            cursor: not-allowed;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="invalidateForm" method="POST">
+        <button id="invalidationButton" type="button" name="navigation_id" value="{{ navigation_id }}" class="invalidationButton" style="margin-left: 10px;" onclick="disableButton()">Invalidate_hq_cache</button>
+        <input type="hidden" name="routing_key" value="invalidate_hq_cache" />
+    </form>
+    <p class="success-message">Cache successfully refreshed. Please logout and login back to see the updates.</p>
+
+</body>
+<script>
+    var backbtn = true
+    console.debug("backbtn1", backbtn);
+    var btn = document.getElementById("invalidationButton");
+    console.debug("backbtn type", typeof backbtn);
+    
+    if(backbtn)
+    {
+        console.debug("if block");
+
+        btn.disabled = true;
+        setTimeout(function(){
+            btn.disabled = false;
+        }, 60000);
+    }  
+    function handleSubmit() {
+    console.log('entered into handleSubmit');
+    document.getElementById("invalidateForm").submit();
+    }
+</script></html>
