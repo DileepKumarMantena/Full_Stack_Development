@@ -4,129 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/style.css"> <!-- Link to external CSS file -->
 </head>
 <body>
 
 <nav id="desktop-nav">
-    <div class="logo">John Doe</div>
     <div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#blogs">Blogs</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
 <section id="profile">
     <div class="section__pic-container">
-        <img decoding="async" id="profile1" src="assets/profile-pic.jpg" alt="John Doe's profile picture" title="John Doe" />
+        <img decoding="async" id="profile1" src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/profile-pic1.png" alt="My Profile  profile picture" title="Dileep Kumar Mantena" style="width: 100px; height: 100px;"  />
     </div>
-    <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">John Doe</h1>
-        <p class="section__text__p2">Software Developer</p>
-        <div class="btn-container">
-            <a href="https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf" target="_blank" rel="noopener">
-                <button class="btn btn-color-2">
-                    See Resume
-                </button>
-            </a>
-            <button class="btn btn-color-1">
-                Contact Info
-            </button>
+    <section id="about">
+        <div class="section__text">
+            <div class="intro">
+                <h1 class="title">Dileep Kumar Mantena</h1>
+                <p class="section__text__p2">Software Developer</p>
+            </div>
+            <div class="btn-container">
+                <a href="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/DkResume.pdf" target="_blank" rel="noopener">
+                    <button class="btn btn-color-2">See Resume</button>
+                </a>
+                <button class="btn btn-color-1" onclick="showContactInfo()">Contact Info</button>
+                <div id="contact-info" style="display: none;">
+                    <p>Email: deelipkumar261997@gmail.com</p>
+                    <p>Phone: 9398275186</p>
+                    <p>Address: D:No-53-25-6/5,Maddilapalem,Vizag,Ap,Pin-530013</p>
+                </div>            
+            </div>
+            <div id="socials-container">
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                    <img src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/linkedin1.png" alt="My LinkedIn profile" class="icon" />
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener">
+                    <img src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/github.png" alt="My Github profile" class="icon" />
+                </a>
+            </div>
         </div>
-        <div id="socials-container">
-            <a target="_blank" href="https://www.linkedin.com/" rel="noopener">
-                <img decoding="async" src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" />
-            </a>
-
-            <a target="_blank" href="https://github.com/" rel="noopener">
-                <img decoding="async" src="./assets/github.png" alt="My Github profile" class="icon" />
-            </a>
-        </div>
-    </div>
+    </section>    
 </section>
-
+    
 <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title" id="aboutTitle">About Me</h1>
+    <h1 class="title" id="aboutTitle">Profile Summary</h1>
     <div class="section-container">
-
         <div class="about-details-container">
             <div class="about-containers">
-                <div class="details-container">
-                    <img decoding="async" src="./assets/experience.png" alt="Experience icon" class="icon" />
-                    <h3>Educational Experience</h3>
-                    <p>2+ years <br />Frontend/Backend Development</p>
-                </div>
-                <div class="details-container">
-                    <img decoding="async" src="./assets/education.png" alt="Education icon" class="icon" />
-                    <h3>Education</h3>
-                    <p>Bachelor of Computer Application<br /></p>
-                </div>
             </div>
             <div class="text-container">
-                <p><span class="highlight"></span>
-                    I'm <span class="highlight">Software Developer</span> from India, I build apps with
-                    a focus on
-                    <span class="highlight">JavaScript React &amp; Redux</span> considering
-                    all the aspects of <span class="highlight">UI/UX</span> . I enjoy turning complex problems into
-                    simple,
-                    beautiful and intuitive designs. <br> A
-                    <span class="highlight">Software Engineer</span> , who loves to solve problems.
-
-                    I am having an experience of building high-performing, responsive, beautiful web applications to
-                    deliver a
-                    unique, intuitive user experience that works, also <span class="highlight"> keen interest in
-                        UI/UX</span>
-                    with some nice designing skills. <br> I
-                    am a well-trained teammate who loves to share ideas and prioritizes communication in order to
-                    achieve goals
-                    within the set deadlines. I enjoy being challenged and working on projects that require me to
-                    step outside
-                    of my comfort zone.
-                </p>
+                <ul>
+                    <li>Presently working as a <strong>Software Developer</strong></li>
+                    <li>Having 3 years of experience in the IT Industry</li>
+                    <li>Proficient in designing and implementing Rest APIs using Django & Tornado Python</li>
+                    <li>Responsibilities include continuous Build, Test, and Release management for applications, working in various environments</li>
+                </ul>
             </div>
         </div>
     </div>
-    <img decoding="async" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" />
+    <img decoding="async" src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/arrow.png" alt="Arrow icon" class="icon arrow" style="width: 20px; height: 20px;" />
 </section>
 
 <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
+    <h1 class="title">Professional Experience</h1>
     <div class="experience-details-container">
         <div class="about-containers">
             <div class="details-container">
-                <h2 class="experience-sub-title">Frontend Development</h2>
-                <div class="article-container">
-                    <article>
-                        <img decoding="async" src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                        <div>
-                            <h3>HTML5</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <!-- Add other articles here -->
-                </div>
+                <ul>
+                    <li>Worked as a Software Engineer for Vivify Health Care PVT LTD, Vizag from April 2021 to May 2022</li>
+                    <li>Currently working as Software Engineer in Nueve It Solutions, Vizag from June 2022 to Present</li>
+                </ul>
             </div>
-            <!-- Add other details-container here -->
         </div>
     </div>
-    <img decoding="async" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" />
+    <h2 class="skills-title">Skills</h2>
+    <details>
+        <summary>Skills</summary>
+        <ul class="skills-list">
+          <li>Operating Systems: Linux, Windows</li>
+          <li>Version Control Tools: GIT</li>
+          <li>Cloud Technologies: AWS</li>
+          <li>Databases: SQL, MongoDB</li>
+          <li>Continuous Integration Tools: GitHub</li>
+          <li>Project Management Tools: Jira, Slack</li>
+          <li>Programming Languages: Python (Django, Tornado), React</li>
+          <li>IDEs: VSCode, PyCharm</li>
+          <li>Developer Tools: Postman, Boomgar</li>
+          <li>RPA Tools: Open Bots, Power Automate</li>
+        </ul>
+      </details><img decoding="async" src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/arrow.png" alt="Arrow icon" class="icon arrow" style="width: 20px; height: 20px;" />
 </section>
 
-<!-- Add other sections -->
+<!-- Projects section  -->
+
+<section id="projects">
+    <h1 class="title">Professional Projects</h1>
+    <div class="projects-details-container">
+        <div class="about-containers">
+            <div class="details-container">
+                <ul >
+                    <ul >
+                        <details>
+                            <summary>Project 4: Self_service Cd's</summary>
+                            <li>
+                                <ul>
+                                    <li>Role: Developer</li>
+                                    <li>Environment: Git, Linux, Python, SQL, Tornado, Q2, React</li>
+                                    <li>Description: We present a comprehensive solution designed to facilitate the seamless opening or renewal of certificate accounts for both financial institutions and their clientele. Our product aims to streamline the process, offering convenience and efficiency to banks and their customers alike.</li>
+                                    <li>Roles & Responsibilities:
+                                        <ul>
+                                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores (FiservDna, Symitar, Corelation, FisrevPremier) systems leveraging Python Tornado framework.</li>
+                                            <li>Construct a robust high-level architecture to ensure efficient communication and seamless integration of APIs within the existing infrastructure.</li>
+                                            <li>Establish version control using Git to manage codebase, enabling collaboration and tracking of changes effectively.</li>
+                                            <li>Validate API functionality and performance using Postman, ensuring compliance with specifications and optimal user experience.</li>
+                                            <li>Generate and manage tickets using Q2 for deployment, outlining necessary requirements and dependencies for seamless integration into the production environment.</li>
+                                            <li>Conduct rigorous testing across staging and production environments to guarantee reliability, security, and scalability of APIs.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </details>
+                    </ul>
+                    
+                    <ul >
+                        <details>
+                            <summary>Project 3: Sfcu(Lighting Loan)</summary>
+                            <li>
+                                <ul>
+                                    <li>Role: Developer</li>
+                                    <li>Environment: Git, Linux, Python, Tornado, SQL, Q2, React</li>
+                                    <li>Description: Fiserv Core APIs serve as a robust technological solution for integrating core banking functionalities seamlessly into existing systems. By leveraging these APIs, we seek to empower FIs with the ability to diversify their loan offerings while simplifying the process of managing and disbursing loans.</li>
+                                    <li>Roles & Responsibilities:
+                                        <ul>
+                                            <li>Develop and integrate REST APIs and Fiserv core systems leveraging Python Tornado framework.</li>
+                                            <li>Construct a robust high-level architecture to ensure efficient communication and seamless integration of APIs within the existing infrastructure.</li>
+                                            <li>Establish version control using Git to manage codebase, enabling collaboration and tracking of changes effectively.</li>
+                                            <li>Validate API functionality and performance using Postman, ensuring compliance with specifications and optimal user experience.</li>
+                                            <li>Generate and manage tickets using Q2 for deployment, outlining necessary requirements and dependencies for seamless integration into the production environment.</li>
+                                            <li>Conduct rigorous testing across staging and production environments to guarantee reliability, security, and scalability of APIs.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </details>
+                    </ul>
+                    
+                <!-- Repeat the same structure for other projects -->
+                
+            </div>
+        </div>
+    </div>
+    <img decoding="async" src="/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Portfolio_Website/asset/assets/arrow.png" alt="Arrow icon" class="icon arrow" style="width: 20px; height: 20px;" />
+</section>
+
 
 <footer>
-    <p>Designed &amp; Built by John Doe</p>
+    <p>Designed &amp; Built by Dileep Kumar Mantena</p>
 </footer>
 
-<script src="index.js"></script>
+<script src="script.js"> </script>
+
+<script>
+    function showContactInfo() {
+        var contactInfo = document.getElementById("contact-info");
+        if (contactInfo.style.display === "none") {
+            contactInfo.style.display = "block";
+        } else {
+            contactInfo.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
