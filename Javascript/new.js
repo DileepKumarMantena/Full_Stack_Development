@@ -1,33 +1,23 @@
-//Array Data Structures:
-class Queue {
-    constructor() {
-        this.items = [];
-    }
+let firstName = "John";
+let age = 25;
 
-    enqueue(item) {
-        this.items.push(item);
-    }
+// Data Types
+let greeting = "Hello, World!";
+let height = 5.9;
+let isStudent = true;
+let undefinedVariable;
+let nullValue = null;
+let fname=""
 
-    dequeue() {
-        return this.items.shift();
-    }
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 25
+};
 
-    peek() {
-        return this.items[0];
-    }
+let colors = ["red", "green", "blue"];
 
-    isEmpty() {
-        return this.items.length === 0;
-    }
-
-    size() {
-        return this.items.length;
-    }
-}
-
-const queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(2);
-console.log(queue.dequeue()); // Output: 1
+console.log(greeting,height,isStudent,undefinedVariable,nullValue,person,colors)
 
 
+let fever= null
