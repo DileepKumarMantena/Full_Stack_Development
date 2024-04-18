@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header, footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Article Section -->
+    <article>
+        <h2>My First Article</h2>
+        <p>This is the content of my first article. I'm learning how to create websites using HTML.</p>
+    </article>
+
+    <!-- Section -->
+    <section>
+        <h2>Photo Gallery</h2>
+        <div>
+            <figure>
+                <img src="photo1.jpg" alt="A beautiful landscape">
+                <figcaption>A beautiful landscape.</figcaption>
+            </figure>
+            <figure>
+                <img src="photo2.jpg" alt="A serene lake">
+                <figcaption>A serene lake.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section>
+        <h2>Data Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>35</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Form Section -->
+    <section>
+        <h2>Contact Form</h2>
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+    <p>© 2024 My Website</p>
+</footer>
+
+</body>
+</html>
