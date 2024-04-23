@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>JavaScript Donut Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/css">      
+      html, body, #container { 
+        width: 100%; height: 100%; margin: 0; padding: 0; 
+      }
+      /* Styling for the canvas (chart) */
+      canvas {
+          width: 400px; /* Adjust width */
+          height: 400px; /* Adjust height */
+          margin: auto; /* Center the chart */
+          display: block; /* Make canvas a block element */
+      }
+    </style>
+  </head>
+  <body>  
+    <table style="width: 100%; height: 100%;">
+        <tr>
+          <td style="width: 20%; vertical-align: top;">
+            <!-- This is where the bar chart will be placed -->
+            <canvas id="barChart"></canvas>
+          </td>
+          <td style="width: 20%; vertical-align: top;">
+            <!-- This is where the donut chart will be placed -->
+            <div id="container"></div>
+          </td>
+        </tr>
+      </table>
+      
+    <script>
+        // Create a bar chart
+        document.addEventListener('DOMContentLoaded', function() {
+            var barCtx = document.getElementById('barChart').getContext('2d');
+            var barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [{
+                        label: 'Overview',
+                        data: [12, 19, 3, 5, 2, 3, 4, 8, 9, 10, 11, 12],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Values'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Months'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+      
+        // Donut chart code
+        var data = anychart.data.set([
+    ['Spotify', 25], // This is the first covered region (e.g., representing Spotify)
+    ['Apple Music', 25], // This is the second covered region (e.g., representing Apple Music)
+    ['Empty', 50] // This is the empty region
+]);
+
+var chart = anychart.pie(data);
+
+// Set the chart radius to make a donut chart
+chart.innerRadius('55%');
+chart.container('container');
+chart.draw();
+
+// Create a color palette
+var palette = anychart.palettes.distinctColors();
+
+// Set the colors according to your requirements
+palette.items([
+    { color: '#1dd05d' }, // Color for the first covered region (e.g., green)
+    { color: '#000000' }, // Color for the second covered region (e.g., black)
+    { color: '#ffffff' } // Color for the empty region (e.g., white)
+]);
+
+// Apply the donut chart color palette
+chart.palette(palette);
+
+// Create a label for the center of the chart
+var label = anychart.standalones.label();
+
+// Configure the label settings
+label
+    .useHtml(true)
+    .text(
+        '<span style="color: #313136; font-size:20px;"> <strong>65%</strong> total new customers</span>'
+    )
+    .position('center')
+    .anchor('center')
+    .hAlign('center')
+    .vAlign('middle');
+
+// Set the label as the center content
+chart.center().content(label);
+    </script>
+  </body>
+</html>
