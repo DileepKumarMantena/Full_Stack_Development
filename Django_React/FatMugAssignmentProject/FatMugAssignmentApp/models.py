@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
-class Vendor(models.Model):
+class Vendor_Model(models.Model):
     name = models.CharField(max_length=255)
     contact_details = models.TextField()
     address = models.TextField()
@@ -17,7 +17,7 @@ class Vendor(models.Model):
 
 class PurchaseOrder(models.Model):
     po_number = models.CharField(max_length=50, unique=True)
-    vendor = models.ForeignKey('Vendor', on_delete=models.CASCADE)
+    vendor = models.ForeignKey('Vendor_Model', on_delete=models.CASCADE)
     order_date = models.DateTimeField()
     delivery_date = models.DateTimeField()
     items = models.JSONField()
@@ -31,3 +31,17 @@ class PurchaseOrder(models.Model):
     class Meta:
         db_table = "PurchaseOrder_Table"
 
+
+class HistoricalPerformance(models.Model):
+    vendor = models.ForeignKey('Vendor_Model', on_delete=models.CASCADE)
+    date = models.DateTimeField()
+    on_time_delivery_rate = models.FloatField()
+    quality_rating_avg = models.FloatField()
+    average_response_time = models.FloatField()
+    fulfillment_rate = models.FloatField()
+    objects = models.Manager
+
+    class Meta:
+        db_table = "HistoricalPerformance_Table"
+
+    

@@ -1,0 +1,24 @@
+from django.urls import path,include
+from .views import *
+
+# Vendor CRUD URLs
+vendor_urls = [
+    path('CreatingNewVendor/', CreateNewvendorApi.as_view()),
+    path('GetAllVendorsListApi/', GetAllVendorsListApi.as_view()),
+    path('GetVendorsDetailsById/<int:id>/', GetVendorsDetailsById.as_view()),
+    path('UpdateVendorsDetailsById/<int:id>/', UpdateVendorsDetailsById.as_view()),
+    path('DeleteVendorsDetails/<int:id>/', DeleteVendorsDetails.as_view()),
+]
+
+# Purchase Order CRUD URLs
+purchase_order_urls = [
+    path('CreateNewPurchaseOrderApi/', CreateNewPurchaseOrderApi.as_view()),
+]
+
+urlpatterns = [
+    # Vendor CRUD URLs
+    path('vendors/', include(vendor_urls)),
+    
+    # Purchase Order CRUD URLs
+    path('purchase-orders/', include(purchase_order_urls)),
+]
