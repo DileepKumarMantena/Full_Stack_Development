@@ -9,3 +9,6 @@
 -weather app -it is a weather app using backend api
 -CodeExample folder consits of html,css,js codes
 -Django_React folder consits of Django code 
+
+
+--- Upadating this file 
