@@ -19,5 +19,13 @@ DeleteVendorsDetails()
 #Purchase Order Crud Views
 
 from .Purchase_Order_Crud.create_new_purchase_order import CreateNewPurchaseOrderApi
+from .Purchase_Order_Crud.get_purchase_list_by_id import GetPurchaseDetailsById
+from .Purchase_Order_Crud.get_all_purchase_list_by_vendor_id import GetPurchaseDetailsByVendorId
+from .Purchase_Order_Crud.delete_purchase_details import DeletePurchaseOrderDetails
+from .Purchase_Order_Crud.update_update_orders_details import UpdatePurchaseOrdersById
 
 CreateNewPurchaseOrderApi()
+GetPurchaseDetailsById()
+GetPurchaseDetailsByVendorId()
+DeletePurchaseOrderDetails()
+UpdatePurchaseOrdersById()

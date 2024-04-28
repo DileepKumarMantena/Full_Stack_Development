@@ -35,5 +35,10 @@ class CreateNeWPurchaseOrder_Serializer(serializers.ModelSerializer):
         user = PurchaseOrder.objects.create(po_number=validated_data['po_number'], vendor=validated_data['vendor'],
                                           order_date=validated_data['order_date'], delivery_date=validated_data['delivery_date'],items=validated_data['items'],quantity=validated_data['quantity'],status=validated_data['status'],quality_rating=validated_data['quality_rating'],issue_date=validated_data['issue_date'],acknowledgment_date=validated_data['acknowledgment_date'])
 
-        user.save()
+        user.save()     
         return user
+    
+class GetAllPurchaseList_Serializer(serializers.ModelSerializer):
+        class Meta:
+            model = PurchaseOrder
+            fields = "__all__"

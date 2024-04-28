@@ -1,18 +1,18 @@
 from rest_framework import generics
 from rest_framework.decorators import parser_classes
 from rest_framework.response import Response
-from ..serializers import CreateNewVendor_Serializer
-from ..models import Vendor_Model
+from ..serializers import GetAllPurchaseList_Serializer
+from ..models import PurchaseOrder
 from rest_framework.parsers import MultiPartParser
 
 @parser_classes((MultiPartParser,))
 
-class GetVendorsDetailsById(generics.GenericAPIView):
-    serializer_class = CreateNewVendor_Serializer
+class GetPurchaseDetailsByVendorId(generics.GenericAPIView):
+    serializer_class = GetAllPurchaseList_Serializer
 
-    def get(self, request,id):
+    def get(self, request,vendor):
         try:
-            vendor=Vendor_Model.objects.get(id=id)
+            vendor=PurchaseOrder.objects.get(id=vendor)
             serializer = self.serializer_class(vendor)
             return Response({
                 'message': 'Successful',
@@ -20,7 +20,7 @@ class GetVendorsDetailsById(generics.GenericAPIView):
                 'HasError': False,
                 'status': 200
             })
-        except Vendor_Model.DoesNotExist as e:
+        except PurchaseOrder.DoesNotExist as e:
             return Response({
                 'message': 'Vendor Not Found',
                 'Result': False,

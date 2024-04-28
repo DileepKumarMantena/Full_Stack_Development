@@ -13,6 +13,10 @@ vendor_urls = [
 # Purchase Order CRUD URLs
 purchase_order_urls = [
     path('CreateNewPurchaseOrderApi/', CreateNewPurchaseOrderApi.as_view()),
+    path('GetPurchaseDetailsById/<int:id>/',GetPurchaseDetailsById.as_view()),
+    path('GetPurchaseDetailsByVendorId/<int:vendor>/',GetPurchaseDetailsByVendorId.as_view()),
+    path('DeletePurchaseOrderDetails/<int:id>/',DeletePurchaseOrderDetails.as_view()),
+    path('UpdatePurchaseOrdersById<int:id>/',UpdatePurchaseOrdersById.as_view())
 ]
 
 urlpatterns = [
