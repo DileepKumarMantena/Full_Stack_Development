@@ -8,6 +8,7 @@ vendor_urls = [
     path('GetVendorsDetailsById/<int:id>/', GetVendorsDetailsById.as_view()),
     path('UpdateVendorsDetailsById/<int:id>/', UpdateVendorsDetailsById.as_view()),
     path('DeleteVendorsDetails/<int:id>/', DeleteVendorsDetails.as_view()),
+    path('GetVendorPerformanceApi<int:id>/',GetVendorPerformanceApi.as_view())
 ]
 
 # Purchase Order CRUD URLs
@@ -16,7 +17,8 @@ purchase_order_urls = [
     path('GetPurchaseDetailsById/<int:id>/',GetPurchaseDetailsById.as_view()),
     path('GetPurchaseDetailsByVendorId/<int:vendor>/',GetPurchaseDetailsByVendorId.as_view()),
     path('DeletePurchaseOrderDetails/<int:id>/',DeletePurchaseOrderDetails.as_view()),
-    path('UpdatePurchaseOrdersById<int:id>/',UpdatePurchaseOrdersById.as_view())
+    path('UpdatePurchaseOrdersById<int:id>/',UpdatePurchaseOrdersById.as_view()),
+    path('api/purchase_orders/<int:id>/acknowledge', AcknowledgePurchaseOrderApi.as_view()),
 ]
 
 urlpatterns = [
