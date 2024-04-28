@@ -11,3 +11,4 @@
 -Django_React folder consits of Django code 
 
 
+-- changed name of repo to fullstackdevlopment
