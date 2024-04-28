@@ -1,20 +1,23 @@
+function isAmstrong(num){
+    const numstr=num.toString();
+    const numDigits=numstr.length;
+    let sumOfPowers=0;
 
-const numbers = [358, 153, 741, 874, 120, 1, 47, 85];
-const armstrongNumbers = [];
-
-for (let i = 0; i < numbers.length; i++) {
-    const num = numbers[i];
-    const numStr = num.toString();
-    const numDigits = numStr.length;
-    let sum = 0;
-
-    for (let j = 0; j < numDigits; j++) {
-        sum += Math.pow(parseInt(numStr[j]), numDigits);
+    for (i=0;i<numDigits;i++){
+        const digit=parseInt(numstr[i],10);
+        sumOfPowers+=Math.pow(digit,numDigits)
+        console.log(sumOfPowers)
     }
+    return sumOfPowers===num;
 
-    if (sum === num) {
-        armstrongNumbers.push(num);
-    }
 }
 
-console.log("Armstrong numbers in the list:", armstrongNumbers);
+const number=125
+//153=1*3+5*3+3*3
+
+if (isAmstrong(number)){
+    console.log(number,"Is a Amstrong number")
+}
+else {
+    console.log(number,"Not a amstrong number")
+}

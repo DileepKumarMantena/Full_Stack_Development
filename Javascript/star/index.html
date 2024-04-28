@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>5 Star Review</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stars {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" onclick="rate(1)">★</div>
+<div class="stars" onclick="rate(2)">★</div>
+<div class="stars" onclick="rate(3)">★</div>
+<div class="stars" onclick="rate(4)">★</div>
+<div class="stars" onclick="rate(5)">★</div>
+
+<script>
+function rate(star) {
+  var stars = document.querySelectorAll('.stars');
+  
+  for (var i = 0; i < stars.length; i++) {
+    stars[i].style.color = 'gray';
+  }
+  
+
+  for (var i = 0; i < star; i++) {
+    stars[i].style.color = 'gold';
+  }
+  
+  switch(star) {
+    case 1:
+      alert("Poor");
+      break;
+    case 2:
+      alert("Fair");
+      break;
+    case 3:
+      alert("Average");
+      break;
+    case 4:
+      alert("Good");
+      break;
+    case 5:
+      alert("Excellent");
+      break;
+    default:
+      alert("Invalid rating");
+      break;
+  }
+}
+</script>
+
+</body>
+</html>

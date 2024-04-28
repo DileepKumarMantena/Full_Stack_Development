@@ -1,0 +1,66 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* Style the form */
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style the form labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style the form inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+label[for="male"],
+label[for="female"],
+label[for="other"] {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Add hover effect to the submit button */
+input[type="submit"]:hover {
+    background-color: navy;
+}

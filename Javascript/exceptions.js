@@ -1,57 +1,30 @@
-// console.log('jjjj')
-// function testOdd(x) {
-//     try {
-        
-//       if (x % 2 === 0) {
-
-//         console.log("The number is even");
-//       }
-//       else console.log("The number is odd");
-  
-//     }
-//     catch (error) {
-//         //   if (!Number.isInteger(x)) {
-            
-//         console.log("Not an integer!")
-      
-//     }
-//     finally {
-//       console.log("this function is to check oddoreven")
-//     }
-    
-//   }
-
-
-// console.log(oddOrEven(24))
-//   console.log(oddOrEven(25))
-//   console.log(oddOrEven("react"))
-  
-function checkPalindrome(str) {
-    
-    try {
-      if (checkPalindrome(str.split('').reverse().join(''))) {
-        console.log("this string is palindrome")
-      }
-      else console.log(str," is not palindrome")
-      
-    } catch (str) {
-      console.log(str," is not palindrome")
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed.");
     }
-    finally {
-      return (str)
-    }
-    
+    return a / b;
 }
-  
-function checkPalindrome(str) {
-    return checkPalindrome
-  }
-  
-//   if (checkPalindrome() == str) {
-//     console.log(str, "this string is palindrome")
-//   }
-//   else { console.log(str, "is not palindrome") }
-  
-  console.log(checkPalindrome('Madam'))
-  console.log(checkPalindrome('mom'))
-  console.log(checkPalindrome('string'))
+
+try {
+    const result = divide(10,2);
+    console.log("Result is :",result);
+} catch (error) {
+    console.error("An error occurred:", error.message);
+}
+finally {
+    console.log("Finally block executed");
+}
+
+
+
+// async function fetchData() {
+//     try {
+//         const response = await fetch("https://example.com/api/data");
+//         const data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         // console.error("An error occurred:", error.message);
+//         console.log('Please try again after some time')
+//     }
+// }
+// fetchData();
