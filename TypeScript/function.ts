@@ -3,6 +3,8 @@ function add(x: number, y: number): number {
 }
 
 console.log(add(5, 3)); // Output: 8
+
+
 console.log(add("5", "3")); // Output: 8
 
 
