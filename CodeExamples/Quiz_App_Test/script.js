@@ -186,6 +186,8 @@ const quizData = [
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 2100; // 35 minutes in seconds
+let userAnswers = [];
+
 
 const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('options');
@@ -193,6 +195,7 @@ const submitButton = document.getElementById('submit');
 const backButton = document.getElementById('back');
 const scoreElement = document.getElementById('score');
 
+// Function to display question and options
 function displayQuestion() {
     const currentQuizData = quizData[currentQuestion];
     questionElement.innerText = currentQuizData.question;
@@ -206,8 +209,10 @@ function displayQuestion() {
     });
 }
 
+// Function to handle option selection
 function selectOption(selectedOption) {
     const currentQuizData = quizData[currentQuestion];
+    userAnswers[currentQuestion] = selectedOption; // Store user's answer
     if (selectedOption === currentQuizData.answer) {
         score++;
     }
@@ -222,14 +227,41 @@ function goBack() {
     }
 }
 
+// Function to end the quiz
 function endQuiz() {
     questionElement.innerText = "Quiz completed!";
     optionsElement.innerHTML = '';
     submitButton.style.display = 'none';
     backButton.style.display = 'none'; // Hide back button after quiz completion
     scoreElement.innerText = `Your score: ${score}/${quizData.length}`;
+
+    // Display wrong answers
+    let wrongAnswers = [];
+    quizData.forEach((question, index) => {
+        if (userAnswers[index] !== question.answer) {
+            wrongAnswers.push({
+                question: question.question,
+                selectedAnswer: userAnswers[index],
+                correctAnswer: question.answer
+            });
+        }
+    });
+     // Display wrong answers to the user
+     if (wrongAnswers.length > 0) {
+        wrongAnswers.forEach((wrongAnswer, index) => {
+            scoreElement.insertAdjacentHTML('beforeend', `<p>Question ${index + 1}: ${wrongAnswer.question}</p>
+                <p>Selected Answer: ${wrongAnswer.selectedAnswer}</p>
+                <p>Correct Answer: ${wrongAnswer.correctAnswer}</p>`);
+        });
+    } else {
+        scoreElement.insertAdjacentHTML('beforeend', `<p>Congratulations! All answers are correct.</p>`);
+    }
 }
+
 
 displayQuestion();
 submitButton.addEventListener('click', endQuiz);
 backButton.addEventListener('click', goBack);
+
+// Call displayQuestion to start the quiz
+displayQuestion();
