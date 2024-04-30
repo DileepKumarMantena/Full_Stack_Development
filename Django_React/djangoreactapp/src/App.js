@@ -3,20 +3,22 @@ import React, { useState, useEffect } from 'react';
 function App() {
   const [vendors, setVendors] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/Vendor%20Management%20System%20With%20Performance%20Metrics/vendors/GetAllVendorsListApi/');
+        const response = await fetch('http://127.0.0.1:8000/GetAllVendorsListApi/');
         const responseData = await response.json();
-        console.log(responseData)
+        console.log("Response Data:", responseData);
 
-        if (responseData && responseData.Result) {
-          // If the response contains 'Result', assume it's the data we need
+        if (responseData && responseData.Message === 'Successful') {
+          // If the response message is 'Successful', set the vendors data
           setVendors(responseData.Result);
           setLoading(false);
         } else {
-          console.error('Error: Response data structure is not as expected');
+          // If the response message is not 'Successful', set the message
+          setMessage('Data not available');
           setLoading(false);
         }
       } catch (error) {
@@ -33,6 +35,8 @@ function App() {
       <h1>All Vendors List</h1>
       {loading ? (
         <p>Loading...</p>
+      ) : message ? (
+        <p>{message}</p>
       ) : (
         <table>
           <thead>
