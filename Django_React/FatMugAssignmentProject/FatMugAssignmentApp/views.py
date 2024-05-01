@@ -10,6 +10,7 @@ from .Vendor_Crud.get_vendors_details_by_id import GetVendorsDetailsById
 from .Vendor_Crud.update_vendors_details import UpdateVendorsDetailsById
 from .Vendor_Crud.delete_vendors_details import DeleteVendorsDetails
 from .Vendor_Crud.get_vendor_performance import GetVendorPerformanceApi
+from .Vendor_Crud.Csv_File_Get import GetStudentDetails
 
 
 
@@ -19,6 +20,7 @@ GetVendorsDetailsById()
 UpdateVendorsDetailsById()
 DeleteVendorsDetails()
 GetVendorPerformanceApi()
+GetStudentDetails()
 
 #Purchase Order Crud Views
 

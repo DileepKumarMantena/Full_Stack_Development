@@ -45,3 +45,12 @@ class HistoricalPerformance(models.Model):
         db_table = "HistoricalPerformance_Table"
 
     
+class Student(models.Model):
+        id = models.IntegerField(primary_key=True)
+        name = models.CharField(max_length=100)
+        total_marks = models.IntegerField()
+        objects = models.Manager
+
+        class Meta:
+            db_table = "Students_Table"
+

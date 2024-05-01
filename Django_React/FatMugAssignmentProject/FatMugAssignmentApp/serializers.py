@@ -42,3 +42,8 @@ class GetAllPurchaseList_Serializer(serializers.ModelSerializer):
         class Meta:
             model = PurchaseOrder
             fields = "__all__"
+
+class GetStudents_Serializer(serializers.ModelSerializer):
+        class Meta:
+            model = Student
+            fields = "__all__"

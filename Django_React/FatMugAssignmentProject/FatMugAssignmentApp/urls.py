@@ -8,7 +8,10 @@ vendor_urls = [
     path('GetVendorsDetailsById/<int:id>/', GetVendorsDetailsById.as_view()),
     path('UpdateVendorsDetailsById/<int:id>/', UpdateVendorsDetailsById.as_view()),
     path('DeleteVendorsDetails/<int:id>/', DeleteVendorsDetails.as_view()),
-    path('GetVendorPerformanceApi<int:id>/',GetVendorPerformanceApi.as_view())
+    path('GetVendorPerformanceApi<int:id>/',GetVendorPerformanceApi.as_view()),
+    path('GetStudentDetails/',GetStudentDetails.as_view()),
+
+
 ]
 
 # Purchase Order CRUD URLs
