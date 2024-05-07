@@ -1,11 +1,13 @@
 const flagContainer = document.getElementById('flagContainer');
-const indianFlag = document.getElementById('indianFlag');
+const flag = document.getElementById('flag');
+const message = document.getElementById('message');
 
 flagContainer.addEventListener('click', function() {
-  console.log('FlagClicked')
-  if (indianFlag.style.display === 'none') {
-    indianFlag.style.display = 'block'; // Show the flag when clicked
+  if (flag.style.display !== 'none') {
+    flag.style.display = 'none'; // Hide the flag
+    message.style.display = 'block'; // Show the message
   } else {
-    indianFlag.style.display = 'none'; // Hide the flag when clicked again
+    flag.style.display = 'block'; // Show the flag
+    message.style.display = 'none'; // Hide the message
   }
 });

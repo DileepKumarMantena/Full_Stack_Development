@@ -4,17 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Indian Flag</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    .flag-container {
+      width: 450px;
+      height: 300px;
+      position: relative;
+    }
+
+    .saffron {
+      width: 100%;
+      height: 33.33%;
+      background-color: #FF9933; /* Saffron color */
+    }
+
+    .white {
+      width: 100%;
+      height: 33.33%;
+      background-color: #FFFFFF; /* White color */
+    }
+
+    .green {
+      width: 100%;
+      height: 33.33%;
+      background-color: #138808; /* Green color */
+    }
+
+    .wheel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; /* Adjust the width and height based on your image size */
+      height: 60px; /* Adjust the width and height based on your image size */
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY1XIy1BS1JLjrEXUKr_IDmJaqHBQUnFWhQylnq1V_Xg&s'); /* Replace 'ashoka-chakra.png' with the path to your image */
+      background-size: cover;
+      border-radius: 100%;
+      cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #fff;
+      display: none; /* Initially hidden */
+    }
+  </style>
 </head>
 <body>
-  <div class="flag-container" id="flagContainer">
-    <div class="indian-flag" id="indianFlag">
-      <div class="top-stripe"></div>
-      <div class="middle-stripe"></div>
-      <div class="bottom-stripe"></div>
-      <div class="wheel"></div>
+  <div class="flag-container">
+    <div class="saffron"></div>
+    <div class="white"></div>
+    <div class="green"></div>
+    <div class="wheel" id="flag"></div>
+    <div class="message" id="message">
+      I Love India
     </div>
   </div>
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('flag').addEventListener('click', function() {
+      console.log('inside function')
+      var message = document.getElementById('message');
+      message.style.display = (message.style.display === 'none') ? 'block' : 'none'; // Toggle message display
+    });
+  </script>
 </body>
 </html>
