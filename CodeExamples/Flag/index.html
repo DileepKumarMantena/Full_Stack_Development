@@ -51,23 +51,33 @@
       color: #fff;
       display: none; /* Initially hidden */
     }
+    .centered-div {
+        width: 300px; /* Set your desired width */
+        height: 200px; /* Set your desired height */
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
   </style>
 </head>
 <body>
-  <div class="flag-container">
+  <div class="centered-div" id="container">
     <div class="saffron"></div>
     <div class="white"></div>
     <div class="green"></div>
     <div class="wheel" id="flag"></div>
-    <div class="message" id="message">
-      I Love India
-    </div>
+    
+  </div>
+  <div class="message" id="message" style="display: none;">
+    <b style="color: black;">I Love India</b>
   </div>
   <script>
     document.getElementById('flag').addEventListener('click', function() {
       console.log('inside function')
-      var message = document.getElementById('message');
-      message.style.display = (message.style.display === 'none') ? 'block' : 'none'; // Toggle message display
+      document.getElementById('container').style.display='none'
+      document.getElementById('message').style.display='block'
     });
   </script>
 </body>
