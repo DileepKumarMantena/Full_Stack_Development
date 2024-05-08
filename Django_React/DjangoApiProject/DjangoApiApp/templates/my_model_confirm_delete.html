@@ -1,0 +1,18 @@
+<!-- myapp/templates/myapp/my_model_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <h1>Confirm Delete</h1>
+    <p>Are you sure you want to delete "{{ my_model.name }}"?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+    </form>
+    <a href="{% url 'my_model_detail' my_model.pk %}">Cancel</a>
+</body>
+</html>

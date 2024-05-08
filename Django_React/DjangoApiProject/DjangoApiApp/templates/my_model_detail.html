@@ -1,0 +1,20 @@
+<!-- myapp/templates/myapp/my_model_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Model Detail</title>
+</head>
+<body>
+    <h1>My Model Detail</h1>
+    <p>Name: {{ my_model.name }}</p>
+    <p>Description: {{ my_model.description }}</p>
+    <a href="{% url 'my_model_update' my_model.pk %}">Edit</a>
+    <form action="{% url 'my_model_delete' my_model.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'my_model_list' %}">Back to List</a>
+</body>
+</html>
