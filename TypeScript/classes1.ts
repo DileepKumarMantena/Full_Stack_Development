@@ -107,6 +107,7 @@
 // console.log(car.getSpeed()); 
 
 // const rat= new Mat(25);
+//console.log(rat.makeSound('hi'))
 // console.log(rat.makeSound4());
 
 class MathUtils {
