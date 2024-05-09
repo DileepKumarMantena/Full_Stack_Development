@@ -1,0 +1,18 @@
+<!-- myapp/templates/myapp/my_model_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Model List</title>
+</head>
+<body>
+    <h1>My Model List</h1>
+    <ul>
+        {% for my_model in my_models %}
+            <li><a href="{% url 'my_model_detail' my_model.pk %}">{{ my_model.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'my_model_create' %}">Create New</a>
+</body>
+</html>
