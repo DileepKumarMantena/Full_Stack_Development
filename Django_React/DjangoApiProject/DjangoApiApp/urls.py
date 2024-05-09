@@ -11,10 +11,10 @@ from django.urls import path
 from .views import MyModelListView, MyModelDetailView, MyModelCreateView, MyModelUpdateView, MyModelDeleteView
 
 urlpatterns = [
-    path('', MyModelListView.as_view(), name='my_model_list'),
-    path('<int:pk>/', MyModelDetailView.as_view(), name='my_model_detail'),
-    path('new/', MyModelCreateView.as_view(), name='my_model_create'),
-    path('<int:pk>/edit/', MyModelUpdateView.as_view(), name='my_model_update'),
-    path('<int:pk>/delete/', MyModelDeleteView.as_view(), name='my_model_delete'),
+    path('', MyModelListView.as_view()),
+    path('<int:pk>/', MyModelDetailView.as_view()),
+    path('new/', MyModelCreateView.as_view()),
+    path('<int:pk>/edit/', MyModelUpdateView.as_view()),
+    path('<int:pk>/delete/', MyModelDeleteView.as_view()),
 ]
 
