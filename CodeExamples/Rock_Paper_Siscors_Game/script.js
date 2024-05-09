@@ -23,6 +23,8 @@ document.querySelectorAll('.choice-btn').forEach(button => {
     const playerChoice = this.id;
     const computerChoice = computerPlay();
     const result = playRound(playerChoice, computerChoice);
-    document.getElementById('result').textContent = `You chose ${playerChoice}, computer chose ${computerChoice}. ${result}`;
+    document.getElementById('result').textContent = `You chose  ${playerChoice}, computer chose ${computerChoice}. ${result}`;
+    document.getElementById('result').style.fontWeight = 'bold';
+
   });
 });
