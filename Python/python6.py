@@ -55,7 +55,7 @@ def txt_to_pdf(input_path, output_path):
 
 # Example usage
 #c:\Users\user\Downloads/Python 
-input_folder = "c:/Users/user/Downloads/Java/Java_Classes _1"
-output_folder = "c:/Users/user/Downloads/Java_Pdf"
+input_folder = "C:/Users/user/Downloads/Projects/Mine/TechNotes/TypeScript"
+output_folder = "C:/Users/user/Downloads/Projects/Mine/Full_Stack_Development/TechNotes/TypeScriptNotes"
 
 convert_to_pdf(input_folder, output_folder)
