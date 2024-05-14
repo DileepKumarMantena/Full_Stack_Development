@@ -2,7 +2,8 @@ import requests
 
 def get_weather_by_location(state, country):
     api_key = "db94dcb1d71acbecb74c1b2e8ba33d2e"
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={state},{country}&APPID={api_key}"
+    # url = f"https://api.openweathermap.org/data/2.5/weather?q={state},{country}&APPID={api_key}"
+    url = f"https://api.openweathermap.org/data/2.5/weather?q=Austin,Usa&APPID=db94dcb1d71acbecb74c1b2e8ba33d2e"
 
     response = requests.get(url)
     if response.status_code == 200:
