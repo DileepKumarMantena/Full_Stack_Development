@@ -30,7 +30,7 @@ urlpatterns = [
     path('api/token/refresh/',
          jwt_views.TokenRefreshView.as_view(),
          name='token_refresh'),
-    path('Vendor Management System With Performance Metrics /', include('FatMugAssignmentApp.urls')),
+    path('', include('FatMugAssignmentApp.urls')),
 
 
 
