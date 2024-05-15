@@ -14,10 +14,11 @@ class GetAllVendorsListApi(generics.GenericAPIView):
         try:
             data = Vendor_Model.objects.all()
             serializer_class = GetAllVendorsList_Serializer(data, many=True)
-            return Response({'Message': 'Successful',
-                             'Result': serializer_class.data,
-                             'HasError': False,
-                             'Status': 200})
+            return serializer_class.data
+            # return Response({'Message': 'Successful',
+            #                  'Result': serializer_class.data,
+            #                  'HasError': False,
+            #                  'Status': 200})
 
         except Exception as e:
             return Response({'Message': 'Fail',

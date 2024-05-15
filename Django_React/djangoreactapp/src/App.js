@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/GetAllVendorsListApi/');
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Austin,Usa&APPID=db94dcb1d71acbecb74c1b2e8ba33d2e');
         const responseData = await response.json();
         console.log("Response Data:", responseData);
 
