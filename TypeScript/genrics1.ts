@@ -35,6 +35,8 @@ function printArray<T>(arr: T[]): void {
 let result=printArray<number>([1, 2, 3]);
 let result1=printArray<string>(["a", "b", "c"]);
 
+
+
 console.log(result)
 console.log(result1)
 
