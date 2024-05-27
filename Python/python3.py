@@ -1,13 +1,30 @@
-age = 25
-print(age)
+print("hello world")
 
-number = 10
-print(number)
+import math
+a,b=10,"Deepak"
+print(type(a))
 
-value = 200
-print = (value)
+c=4
+print(dir(math))
+print(math.sqrt(c))
 
-name = "False"
 
-print(name)
+#python python3.py
+
+#interpeter (pvm)
+
+#python --simple ,django,flask,ml,ai,numpy ,
+
+#java 100%-- python 100%
+
+import numpy as np
+print(dir(np))
+#pip install packagename=3.12.1 #requests ,mysql,mongo
+
+#dynamically typed language
+
+#python filename.py --- 01 (byte code )---excute -- highlevel language(english)--output 
+
+#Oops--object oriented proograming structure
+ #class object polymorphism inheritance
 

@@ -4,6 +4,7 @@ public class ForLoop {
             System.out.println("The Value is "+i);
             if (i %2==0){
                 System.out.println("even"+i);
+                break;
             }
             else {
                 System.out.println("odd"+i);
