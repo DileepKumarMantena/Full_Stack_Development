@@ -4,6 +4,8 @@ public class StringExmaple {
             // Creating strings
             String message ="Hello, Java!";
             String name ="Alice";
+            String palindrome="Madam";
+            String lowerCase = palindrome.toLowerCase();
             // Concatenation
             String greeting = "Hello," + name; // Result: &quot;Hello, Alice&quot;
             System.out.println(greeting);

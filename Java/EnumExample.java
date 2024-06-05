@@ -19,6 +19,9 @@ public class EnumExample {
         
         System.out.println("Enter the second number:");
         int b = scanner.nextInt();
+        System.out.println(b);
+
+
 
         Operation operator;
         try {
