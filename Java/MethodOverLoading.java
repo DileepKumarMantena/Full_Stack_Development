@@ -11,9 +11,8 @@ public class MethodOverLoading {
             }
 
             public static void main(String[] args) {
-            int sum1 = add(5, 10);
-            
-            System.out.println("Sum of integers: " + sum1);
+             
+                add(2,3);
 
             }
             
