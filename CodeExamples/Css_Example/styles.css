@@ -1,0 +1,26 @@
+p {
+    color: red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: blue ;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    color: pink;
+
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #0056b3;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+}

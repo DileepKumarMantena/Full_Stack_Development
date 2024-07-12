@@ -1,6 +1,6 @@
 public class SwitchStatement {
     public static void main(String[] args) {
-        String age = "Sunday";
+        String age = "Tuesday";
         switch (age) {
             case "Sunday":
                 System.out.println("Sunday");

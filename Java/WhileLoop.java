@@ -5,6 +5,9 @@ public class WhileLoop {
         while (count < 5) {
             System.out.println("Count Value" + count);
             count++; 
+            if (count==10){
+                break;
+            }
 }
     }
 }

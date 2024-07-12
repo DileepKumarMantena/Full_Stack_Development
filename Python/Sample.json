@@ -1,0 +1,17 @@
+[
+    {
+        "company_id": 1,
+        "name": "Alice",
+        "year": 2020
+    },
+    {
+        "company_id": 2,
+        "name": "Franklin",
+        "year": 2021
+    },
+    {
+        "company_id": 3,
+        "name": "Charlie",
+        "year": 2019
+    }
+]

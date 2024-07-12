@@ -2,41 +2,44 @@
 <title> College details</title>
 </html>
 <Body>
-<img src="/home/dileep/Documents/Sample/React/FrontEnd/Html/header-image.png"
-<form>
-<form> </form>    
-    <br>
-<br>
-<label for="NAME">FIRST NAME-</label>
-<input type="text"id="name"name="name">
-<br>
-<br>
-<label for="NAME">LAST NAME-</label>
-<input type="text"id="name"name="name">
-<br><br>
-<label for="NAME">EMAIL ID-</label>
-<input type="text"id="name"name="name">
-<br><br>
-<label
-for="phone number">PH.Number-</label>
-<input type="Number"id="Number"
-Name="Number">
-<br><br>
-<label for="ROLL NUM"> ROLL NO-</label>
-<input type="text"id="name"name="name">
-<br><br><br>
-<label for="USERNAME">USERNAME-</label>
-<input type="text"id="name"name="name">
-<br><br>
-<Label for="password">PASSWORD-</Label>
-<input type="Password"
-id="Password"name="Password"></form>
-<br><br>
-<form action="/home/dileep/Documents/Sample/React/FrontEnd/Html/login.html" target="_blank" method="get"><button type="login" formaction="/home/dileep/Documents/Sample/React/FrontEnd/Html/login.html">LOGIN</button>
-    </form>
-    <form action="/home/dileep/Documents/Sample/React/FrontEnd/Html/Sign up.html" target="_blank" method="get"><button type="signup" formaction="/home/dileep/Documents/Sample/React/FrontEnd/Html/Sign up.html">SIGNUP</button>
-    </form>
+    <form  action="/submit_form" method="post">
 
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        
+        <input type="radio" id="female" name="gender" value="female">
+
+
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+        <label for="subscribe">Subscribe to newsletter</label>
+
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+        
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+
+
+     
+     
+
+
+    </form>
 
     
 </Body>
