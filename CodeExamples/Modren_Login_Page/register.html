@@ -46,15 +46,11 @@
 
 <script>
     function saveFormData(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-        
-        // Get form values
+        event.preventDefault(); 
         var fullName = document.getElementById('fullname').value;
         var email = document.getElementById('email').value;
         var password = document.getElementById('pass').value;
-        var confirmPassword = document.getElementById('confirm_pass').value;
-        
-        // Redirect to another page with form values as query parameters
+        var confirmPassword = document.getElementById('confirm_pass').value;        
         window.location.href = "/home/dileep/Documents/Sample/React/FrontEnd/CodeExamples/Modren_Login_Page/page.html?fullname=" + fullName + "&email=" + email + "&password=" + password + "&confirmPassword=" + confirmPassword;
     }
 </script>

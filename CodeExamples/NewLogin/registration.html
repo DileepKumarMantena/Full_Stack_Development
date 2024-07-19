@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f7f7f7;
+            font-family: 'Poppins', sans-serif;
+        }
+        .wrapper {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px 30px;
+        }
+        .login-box {
+            width: 100%;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-header span {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .input_box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        .label {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: #fff;
+            padding: 0 5px;
+            color: #333;
+            font-size: 14px;
+            pointer-events: none;
+        }
+        .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            color: #333;
+            font-size: 20px;
+        }
+        .input-submit {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition:  0.3s;
+        }
+        .input-submit:hover {
+            background: #555;
+        }
+        .register {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .register span {
+            font-size: 14px;
+        }
+        .register a {
+            color: blueviolet;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="login-box">
+        <div class="login-header">
+            <span>Register</span>
+        </div>
+        <form action="/submit_registration" method="post">
+            <div class="input_box">
+                <input type="text" name="fullname" class="input-field" required>
+                <label for="fullname" class="label">Full Name</label>
+                <i class="bx bx-user icon"></i>
+            </div>
+            <div class="input_box">
+                <input type="email" name="email" class="input-field" required>
+                <label for="email" class="label">Email</label>
+                <i class="bx bx-envelope icon"></i>
+            </div>
+            <div class="input_box">
+                <input type="password" name="password" class="input-field" required>
+                <label for="password" class="label">Password</label>
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+            <div class="input_box">
+                <input type="password" name="confirm_password" class="input-field" required>
+                <label for="confirm_password" class="label">Confirm Password</label>
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+            <div class="input_box">
+                <input type="submit" class="input-submit" value="Register">
+            </div>
+        </form>
+        <div class="register">
+            <span>Already have an account? <a href="login.html">Login</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
