@@ -1,0 +1,2 @@
+Username :Django_Blog
+Password:Django_Blog
