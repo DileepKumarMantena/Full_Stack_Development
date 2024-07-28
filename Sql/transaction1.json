@@ -1,0 +1,107 @@
+[
+	{
+		"id" : 1,
+		"user_id" : "1",
+		"amount" : 2,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-01 15:55:13.569235"
+	},
+	{
+		"id" : 2,
+		"user_id" : "1",
+		"amount" : 200,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-01 15:59:34.459557"
+	},
+	{
+		"id" : 3,
+		"user_id" : "1",
+		"amount" : -1,
+		"transaction_id" : "generate_unique_id()",
+		"timestamp" : "2024-07-01 16:32:54.194768"
+	},
+	{
+		"id" : 4,
+		"user_id" : "2",
+		"amount" : 50000,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-03 15:06:18.120861"
+	},
+	{
+		"id" : 5,
+		"user_id" : "2",
+		"amount" : -100,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-03 15:07:21.433271"
+	},
+	{
+		"id" : 6,
+		"user_id" : "3",
+		"amount" : 50000,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 15:09:24.169645"
+	},
+	{
+		"id" : 7,
+		"user_id" : "3",
+		"amount" : -500,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-03 15:11:20.213735"
+	},
+	{
+		"id" : 8,
+		"user_id" : "2",
+		"amount" : -200,
+		"transaction_id" : "",
+		"timestamp" : "2024-07-03 15:15:46.207791"
+	},
+	{
+		"id" : 9,
+		"user_id" : "2",
+		"amount" : -200,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 15:18:03.435935"
+	},
+	{
+		"id" : 10,
+		"user_id" : "2",
+		"amount" : -200,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 15:30:59.887595"
+	},
+	{
+		"id" : 11,
+		"user_id" : "2",
+		"amount" : -200,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 15:36:12.817515"
+	},
+	{
+		"id" : 12,
+		"user_id" : "2",
+		"amount" : -100,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 15:42:45.983109"
+	},
+	{
+		"id" : 13,
+		"user_id" : "1",
+		"amount" : 500,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 16:05:23.864085"
+	},
+	{
+		"id" : 14,
+		"user_id" : "2",
+		"amount" : 4100,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-03 00:00:00.000000"
+	},
+	{
+		"id" : 15,
+		"user_id" : "2",
+		"amount" : 500,
+		"transaction_id" : "1",
+		"timestamp" : "2024-07-27 00:00:00.000000"
+	}
+]
