@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 24px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a, header nav .profile {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #34495E;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-task {
+    margin-bottom: 20px;
+}
+
+.add-task button {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #BDC3C7;
+    border-radius: 5px;
+}
+
+.task-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.task-item {
+    background-color: #ECF0F1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.low-priority {
+    border-left: 5px solid #3498DB;
+}
+
+.task-item.medium-priority {
+    border-left: 5px solid #F1C40F;
+}
+
+.task-item.high-priority {
+    border-left: 5px solid #E74C3C;
+}
+
+.task-item .task-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item .task-details .task-title {
+    font-weight: bold;
+}
+
+.task-item .task-details .task-desc {
+    font-size: 14px;
+    color: #7F8C8D;
+}
+
+.task-item .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-item .task-actions button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.task-item .task-actions .complete-btn {
+    background-color: #2ECC71;
+    color: white;
+}
+
+.task-item .task-actions .delete-btn {
+    background-color: #E74C3C;
+    color: white;
+}

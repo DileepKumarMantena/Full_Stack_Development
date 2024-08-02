@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ProductivityApp</div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Calendar</a>
+            <a href="#">Projects</a>
+            <a href="#">Teams</a>
+            <div class="profile">Profile</div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Tasks</h3>
+            <ul>
+                <li>Today</li>
+                <li>Upcoming</li>
+                <li>Completed</li>
+                <li>Overdue</li>
+            </ul>
+            <h3>Projects</h3>
+            <ul>
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="add-task">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchBar" placeholder="Search tasks...">
+            </div>
+            <div class="task-list" id="taskList">
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
