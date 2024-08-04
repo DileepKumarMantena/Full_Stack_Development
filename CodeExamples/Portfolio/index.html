@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Custom styles for contact icons */
+        .icon-email {
+            color: red;
+        }
+        .icon-phone {
+            color: green;
+        }
+        .icon-address {
+            color: blue;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navigation Styles */
+        #desktop-nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Profile Section Styles */
+        #profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .section__pic-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .title {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: steelblue;
+        }
+
+        .btn-container {
+            margin: 20px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn-color-1 {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        #contact-info {
+            margin-top: 20px;
+        }
+
+        #socials-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* About, Experience, Projects, and Certificates Section Styles */
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0;
+        }
+
+        .text-container li {
+            margin-bottom: 10px;
+        }
+
+        .text-container strong {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav id="desktop-nav">
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+    </ul>
+</nav>
+
+<section id="profile">
+    <div class="section__pic-container">
+        <img decoding="async" src="images/profile-pic1.png" alt="My Profile picture" title="Dileep Kumar Mantena" />
+    </div>
+    <div class="section__text">
+        <div class="intro">
+            <h1 class="title">Dileep Kumar Mantena</h1>
+            <p><strong>Software Developer</strong></p>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-color-1" onclick="showContactInfo()">Contact Info</button>
+            <div id="contact-info" style="display: none;">
+                <p><i class="bi bi-envelope icon-email"></i> Email: <a href="mailto:deelipkumar261997@gmail.com" class="email-link">deelipkumar261997@gmail.com</a></p>
+                <p><i class="bi bi-telephone icon-phone"></i> Phone: 9398275186</p>
+                <p><i class="bi bi-geo-alt icon-address"></i> Address: D:No-53-25-6/5, Maddilapalem, Vizag, Ap, Pin-530013</p>
+            </div>
+        </div>
+        <div id="socials-container">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="mx-2">
+                <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="mx-2">
+                <i class="bi bi-github" style="font-size: 2rem;"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h1 class="title">Profile Summary</h1>
+    <div class="text-container">
+        <ul>
+            <li>Presently working as a <strong>Software Developer</strong></li>
+            <li>Having 3+ years of experience in the IT Industry</li>
+            <li>Proficient in designing and implementing Rest APIs using Django & Tornado Python</li>
+            <li>Responsibilities include continuous Build, Test, and Release management for applications, working in various environments</li>
+        </ul>
+    </div>
+</section>
+
+<section id="experience" class="section">
+    <h1 class="title">Professional Experience</h1>
+    <div class="text-container">
+        <ul>
+            <li>Worked as a Software Engineer for <strong>Vivify Health Care PVT LTD</strong>, Vizag from April 2021 to May 2022</li>
+            <li>Currently working as Software Engineer in <strong>Nueve It Solutions</strong>, Vizag from June 2022 to Present</li>
+        </ul>
+        <h2 class="skills-title">Skills</h2>
+        <details>
+            <summary>Skills</summary>
+            <ul class="skills-list">
+                <li>Operating Systems: Linux, Windows</li>
+                <li>Version Control Tools: GIT</li>
+                <li>Cloud Technologies: AWS</li>
+                <li>Databases: SQL, MongoDB</li>
+                <li>Continuous Integration Tools: GitHub</li>
+                <li>Project Management Tools: Jira, Slack</li>
+                <li>Programming Languages: Python (Django, Tornado), React</li>
+                <li>IDEs: VSCode, PyCharm</li>
+                <li>Developer Tools: Postman, Boomgar</li>
+                <li>RPA Tools: Open Bots, Power Automate</li>
+            </ul>
+        </details>
+    </div>
+</section>
+
+<section id="projects">
+    <h1 class="title">Professional Projects</h1>
+    <div class="projects-details-container">
+        <div class="text-container">
+            <details>
+                <summary>Project 5: <strong> Services CD</strong></summary>
+                <ul>
+                    <li><strong>Role:</strong> Developer</li>
+                    <li><strong>Environment:</strong> Git, Linux, Python, SQL, Tornado, Q2, React</li>
+                    <li><strong>Description:</strong> We present a comprehensive solution designed to facilitate the seamless opening or renewal of certificate accounts for both financial institutions and their clientele. Our product aims to streamline the process, offering convenience and efficiency to banks and their customers alike.</li>
+                    <li><strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores (FiservDna, Symitar, FIS), emphasizing high availability, reduced downtime, and an event-driven microservices architecture.</li>
+                            <li>Leverage the ODA framework, employing OBL API calls, to enhance operational efficiency and accuracy.</li>
+                            <li>Perform Unit and Integration Testing of UI components and API endpoints to ensure seamless functionality and reliability.</li>
+                            <li>Prepare detailed technical documentation for streamlined knowledge transfer and ease of maintenance.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>Project 4: <strong> Beneficiaries</strong></summary>
+                <ul>
+                    <li><strong>Role:</strong> Developer</li>
+                    <li><strong>Environment:</strong> Git, Linux, Python, SQL</li>
+                    <li><strong>Description:</strong> This project helps banking customers manage their accounts and their beneficiaries along with their accounts.</li>
+                    <li><strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores (Fiserv DNA, Finxact) emphasizing high availability, reduced downtime, and an event-driven microservices architecture.</li>
+                            <li>Perform Unit and Integration Testing of UI components and API endpoints to ensure seamless functionality and reliability.</li>
+                            <li>Prepare detailed technical documentation for streamlined knowledge transfer and ease of maintenance.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>Project 3: <strong> Member Data</strong></summary>
+                <ul>
+                    <li><strong>Role:</strong> Developer</li>
+                    <li><strong>Environment:</strong> Git, Linux, Python, SQL, Django</li>
+                    <li><strong>Description:</strong> Helps to update membership details to enhance their OLB options at the time of login.</li>
+                    <li><strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores, emphasizing high availability, reduced downtime, and an event-driven microservices architecture.</li>
+                            <li>Perform Unit and Integration Testing of UI components and API endpoints to ensure seamless functionality and reliability.</li>
+                            <li>Prepare detailed technical documentation for streamlined knowledge transfer and ease of maintenance.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>Project 2: <strong>Lightning Loan</strong></summary>
+                <ul>
+                    <li><strong>Role:</strong> Developer</li>
+                    <li><strong>Environment:</strong> Git, Linux, Python, SQL, Tornado</li>
+                    <li><strong>Description:</strong> This project helps customers get loans from the bank based on their needs.</li>
+                    <li><strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores, emphasizing high availability, reduced downtime, and an event-driven microservices architecture.</li>
+                            <li>Perform Unit and Integration Testing of UI components and API endpoints to ensure seamless functionality and reliability.</li>
+                            <li>Prepare detailed technical documentation for streamlined knowledge transfer and ease of maintenance.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+<details>
+                <summary>Project 1: <strong>Life Eazy</strong></summary>
+                <ul>
+                    <li><strong>Role:</strong> Developer</li>
+                    <li><strong>Environment:</strong> Git, Linux, Python, SQL, Django</li>
+                    <li><strong>Description:</strong> This project  helps to track your health and book appoitnments to your nearest doctors.</li>
+                    <li><strong>Roles & Responsibilities:</strong>
+                        <ul>
+                            <li>Develop and integrate REST APIs and SOAP APIs across diverse cores, emphasizing high availability, reduced downtime, and an event-driven microservices architecture.</li>
+                            <li>Perform Unit and Integration Testing of UI components and API endpoints to ensure seamless functionality and reliability.</li>
+                            <li>Prepare detailed technical documentation for streamlined knowledge transfer and ease of maintenance.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section id="certificates" class="section">
+    <h1 class="title">Professional Certificates</h1>
+    <div class="text-container">
+        <details>
+            <summary>Certificate 1: <strong>The Joy of Computing UsingPython</strong></summary>
+            <ul>
+                <li><strong>Description:</strong> Successfully completed the online certification course “The Joy of Computing UsingPython” conducted byNPTEL.</li>
+            </ul>
+        </details>
+ <details>
+            <summary>Certificate 2: <strong>DataEngneering</strong></summary>
+            <ul>
+                <li><strong>Description:</strong> Successfully completed the online certification course “DataEngneering” conducted byNPTEL.</li>
+            </ul>
+        </details>
+<details>
+            <summary>Certificate 2: <strong>RPA Certificate</strong></summary>
+            <ul>
+                <li><strong>Description:</strong> Successfully Completed the OpenBots Developer Certification.</li>
+            </ul>
+        </details>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Dileep Kumar Mantena. All rights reserved.</p>
+</footer>
+
+<script>
+    function showContactInfo() {
+        var contactInfo = document.getElementById("contact-info");
+        if (contactInfo.style.display === "none") {
+            contactInfo.style.display = "block";
+        } else {
+            contactInfo.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
