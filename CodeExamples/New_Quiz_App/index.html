@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Programming Quiz</h1>
+    </header>
+    <main>
+        <section id="language-selection">
+            <h2>Select a Programming Language</h2>
+            <select id="language">
+                <option value="" disabled selected>Select a language</option>
+                <option value="python">Python</option>
+                <option value="django">Django</option>
+                <option value="sql">SQL</option>
+                <option value="react">React</option>
+            </select>
+            <button id="start-quiz">Start Quiz</button>
+        </section>
+        <section id="quiz-section" class="hidden">
+            <h2 id="quiz-title">Quiz Questions</h2>
+            <div id="timer">Time left: <span id="timer-count">00:00</span></div>
+            <div id="questions-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+            <button id="submit-answers">Submit Answers</button>
+        </section>
+        <section id="results-section" class="hidden">
+            <h2>Results</h2>
+            <div id="results">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Quiz App</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
