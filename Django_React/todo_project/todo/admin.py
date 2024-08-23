@@ -1,3 +1,7 @@
-from django.contrib import admin
+# admin.py
 
-# Register your models here.
+from django.contrib import admin
+from .models import TodoItem, TimeUnit
+
+admin.site.register(TodoItem)
+admin.site.register(TimeUnit)

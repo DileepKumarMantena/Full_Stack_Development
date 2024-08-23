@@ -10,3 +10,16 @@ class TodoItem(models.Model):
         db_table = "To_Do_Table"
 
     
+class TimeUnit(models.Model):
+    TIME_CHOICES = [
+        ('s', 'Seconds'),
+        ('m', 'Minutes'),
+        ('h', 'Hours'),
+    ]
+
+    unit = models.CharField(max_length=1, choices=TIME_CHOICES, default='m')
+    value = models.PositiveIntegerField()
+    medicine_name=models.CharField(max_length=250)
+
+    class Meta:
+        db_table = "Time_Unit_Table"

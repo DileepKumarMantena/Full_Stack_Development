@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
-    'rest_framework'
+    'rest_framework',
+    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo_project.wsgi.application'
 
+# settings.py
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis as the broker
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Redis as the backend
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
