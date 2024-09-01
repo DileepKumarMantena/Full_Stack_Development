@@ -1,0 +1,11 @@
+navigate to ---/Downloads/Projects/Mine/Full_Stack_Development/Django_React/HospatilManagement/hms/hospital
+
+-- create database named -hospatil_management_system
+-- run python manage.py makemigrations
+-- run python manage.py migrate
+--create a super user -- run python manage.py createsuperuser
+admin credentials
+
+Username:  admin@gmail.com
+Password: Test@123
+
