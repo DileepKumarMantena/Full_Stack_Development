@@ -1,6 +1,7 @@
 print("hello world")
 
 import math
+from math import sqrt as s
 a,b=10,"Deepak"
 print(type(a))
 

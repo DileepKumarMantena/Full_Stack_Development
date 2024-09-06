@@ -1,50 +1,21 @@
-public import java.util.Scanner;
-
 public class test {
+public static void main(String[] args) {
+byte myByte = 42;
+short myShort = 10000;
+int myInt = 1000000;
+long myLong = 1000000000L;
+float myFloat = 3.14f;
+double myDouble = 3.14159;
+char myChar ='a';
+boolean isTrue = true;
+System.out.println("byte:" + myByte);
+System.out.println("short:" + myShort);
+System.out.println("int:" + myInt);
+System.out.println(":mylong" + myLong);
+System.out.println("myfloat:" + myFloat);
+System.out.println(":mydouble:"+ myDouble);
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Simple Calculator");
-        System.out.println("Enter first number:");
-        double num1 = scanner.nextDouble();
-        System.out.println("Enter second number:");
-        double num2 = scanner.nextDouble();
-        System.out.println("Choose an operation (+, -, *, /):");
-        char operation = scanner.next().charAt(0);
-        
-        double result = 0;
-        boolean validOperation = true;
-
-        switch (operation) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error: Division by zero");
-                    validOperation = false;
-                }
-                break;
-            default:
-                System.out.println("Error: Invalid operation");
-                validOperation = false;
-        }
-
-        if (validOperation) {
-            System.out.println("Result: " + result);
-        }
-
-        scanner.close();
-    }
+System.out.println(":mychar:" + myChar);
+System.out.println("boolean:"+ isTrue);
 }
- {
-    
 }
