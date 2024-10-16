@@ -1,0 +1,33 @@
+2024-10-11 21:22:34,816 - INFO - 25Deepak
+2024-10-11 21:22:34,817 - INFO - 25
+2024-10-11 21:22:34,817 - INFO - Deepak
+2024-10-11 21:26:14,545 - INFO - 1Deepak
+2024-10-11 21:26:48,777 - INFO - 100Deepak
+2024-10-11 21:26:48,778 - INFO - 10
+2024-10-15 20:51:04,501 - INFO - Dileep
+2024-10-16 20:54:12,931 - INFO - User input: 2Deepaj
+2024-10-16 20:54:12,936 - INFO - Age: 2
+2024-10-16 20:54:12,936 - INFO - Name: Deepaj
+2024-10-16 20:54:12,937 - INFO - Deepaj is 18 or younger.
+2024-10-16 20:54:51,926 - INFO - User input: 2 deepak
+2024-10-16 20:54:51,927 - ERROR - Invalid input format. Please enter age followed by a name.
+2024-10-16 20:54:58,723 - INFO - User input: 2deepak
+2024-10-16 20:54:58,724 - INFO - Age: 2
+2024-10-16 20:54:58,725 - INFO - Name: deepak
+2024-10-16 20:54:58,725 - INFO - deepak is 18 or younger.
+2024-10-16 20:55:41,644 - INFO - User input: 2deepak
+2024-10-16 20:55:41,646 - INFO - Age: 2
+2024-10-16 20:55:41,646 - INFO - Name: deepak
+2024-10-16 20:55:41,646 - INFO - deepak is 18 or younger.
+2024-10-16 20:56:19,403 - INFO - User input: 2deepak
+2024-10-16 20:56:19,407 - INFO - deepak is 18 or younger.
+2024-10-16 20:57:04,172 - INFO - User input: 200deepak
+2024-10-16 20:57:29,244 - INFO - User input: 2deepak\
+2024-10-16 21:02:07,421 - INFO - User input: 2deepak
+2024-10-16 21:02:07,422 - INFO - Age: 2
+2024-10-16 21:02:07,422 - INFO - Name: deepak
+2024-10-16 21:02:07,423 - INFO - deepak is 18 or younger.
+2024-10-16 21:02:22,792 - INFO - User input: 3000deepak
+2024-10-16 21:02:22,793 - INFO - Age: 3000
+2024-10-16 21:02:22,793 - INFO - Name: deepak
+2024-10-16 21:02:22,793 - INFO - deepak is older than 18.

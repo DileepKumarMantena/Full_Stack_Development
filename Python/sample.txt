@@ -1,0 +1,38 @@
+variable
+
+what is varibale in python and its use
+
+data store
+
+local variable 
+global variable
+
+local variable /broadcast variable 
+
+global variable
+
+local 
+global 
+
+
+a=10
+local a=10
+
+
+production
+devlopment
+
+if env=devlopment=
+   apikey="test"
+else :
+   apikey="prod"
+
+
+def register():
+    apikey="test"
+    #logic
+
+
+def register_prod():
+    apikey="prod"
+    #logic

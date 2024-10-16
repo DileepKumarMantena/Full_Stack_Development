@@ -1,8 +1,5 @@
+
 id,name,year,salary
 1,Alice,2020,5000
 2,Bob,2021,6000
 3,Charlie,2019,
-
-
-
-sum(salary)
