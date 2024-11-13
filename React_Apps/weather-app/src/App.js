@@ -14,7 +14,7 @@ function App() {
       <Route path="/" element={<WeatherApp />}></Route>
       <Route path="/" element={<Registration />}></Route>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/display" element={<WeatherPage />}></Route>
+      {/* <Route path="/display" element={<WeatherPage />}></Route> */}
       </Routes>
     </Router>
     

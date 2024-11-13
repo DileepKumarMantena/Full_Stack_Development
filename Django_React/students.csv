@@ -9,3 +9,16 @@ id,name,total_marks
 8,Amanda Taylor,75
 9,Matthew Thomas,90
 10,Laura Garcia,79
+
+data = [("Alice", 29), ("Bob", 34), ("Catherine", 23)]
+columns = ["Name", "Age"]
+
+dataframe 
+
+Name Age
+Alice 29
+Bob  34 
+Catherine 23
+
+--- whose age is <30
+select name where age <30 from dataframe;

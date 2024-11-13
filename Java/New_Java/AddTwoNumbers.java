@@ -11,3 +11,6 @@ public class AddTwoNumbers {
         System.out.println("Sum: " + sum);
     }
 }
+
+// # javac filename.java
+// #java filename.java

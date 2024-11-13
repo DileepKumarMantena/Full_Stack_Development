@@ -1,0 +1,17 @@
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+      <Route path="/register" element={<register />}></Route>
+      <Route path="/login" element={<login />}></Route>
+        <Route path="/dashboard" element={<dashboard />}></Route>
+
+
+      </Routes>
+    </Router>
+    
+  );
+}
+
+signup login
