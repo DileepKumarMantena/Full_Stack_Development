@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MyBank</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0073e6;
+        }
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login to MyBank</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="signup.html">Signup</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Access Your Account</h2>
+        <p>Securely log in to manage your banking needs anytime, anywhere.</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Username" required><br>
+            <input type="password" id="password" placeholder="Enter Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? 
+            <a href="signup.html">
+                <button>Signup</button>
+              </a> 
+        </p>
+    </section>
+    <script src="assets/script.js"></script>
+</body>
+</html>

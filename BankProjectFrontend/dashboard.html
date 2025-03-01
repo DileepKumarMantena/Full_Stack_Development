@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MyBank</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0073e6;
+        }
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #0073e6;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Transaction Type Colors */
+        .deposit {
+            color: green;
+            font-weight: bold;
+        }
+        .withdrawal {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Status Colors */
+        .completed {
+            color: green;
+            font-weight: bold;
+        }
+        .pending {
+            color: orange;
+            font-weight: bold;
+        }
+        .failed {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MyBank Dashboard</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="transfer.html">Transfer Money</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Welcome, User</h2>
+        <p><strong>Account Balance:</strong> $5,000</p>
+        <a href="transfer.html" class="btn">Transfer Money</a>
+        <a href="index.html" class="btn">Logout</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Date</th>
+                    <th>Account Holder</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#TXN001</td>
+                    <td>2025-02-27</td>
+                    <td>John Doe</td>
+                    <td class="deposit">Deposit</td>
+                    <td>$1,000</td>
+                    <td>$5,500</td>
+                    <td class="completed">Completed</td>
+                </tr>
+                <tr>
+                    <td>#TXN002</td>
+                    <td>2025-02-26</td>
+                    <td>Jane Smith</td>
+                    <td class="withdrawal">Withdrawal</td>
+                    <td>$500</td>
+                    <td>$3,200</td>
+                    <td class="pending">Pending</td>
+                </tr>
+                <tr>
+                    <td>#TXN003</td>
+                    <td>2025-02-25</td>
+                    <td>Mike Johnson</td>
+                    <td class="deposit">Deposit</td>
+                    <td>$2,000</td>
+                    <td>$7,000</td>
+                    <td class="completed">Completed</td>
+                </tr>
+                <tr>
+                    <td>#TXN004</td>
+                    <td>2025-02-24</td>
+                    <td>Sarah Lee</td>
+                    <td class="withdrawal">Withdrawal</td>
+                    <td>$1,500</td>
+                    <td>$2,500</td>
+                    <td class="failed">Failed</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
