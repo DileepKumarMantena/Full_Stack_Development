@@ -33,7 +33,11 @@
         h2 {
             color: #0073e6;
         }
-        input {
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+        input, textarea {
             width: 80%;
             padding: 10px;
             margin: 10px 0;
@@ -56,42 +60,27 @@
 </head>
 <body>
     <header>
-        <h1>FortuneTrust </h1>
+        <h1>FortuneTrust</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="signup.html">Signup</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
     <section>
-        <h2>Access Your Account</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Enter Username" required><br>
-            <input type="password" id="password" placeholder="Enter Password" required><br>
-            <button type="submit">Login</button>
+        <h2>Need Help?</h2>
+        <p>If you have any issues or queries, feel free to reach out to our support team.</p>
+        <form id="supportForm">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" placeholder="Describe your issue..." rows="5" required></textarea><br>
+            <button type="submit">Submit</button>
         </form>
-        <p>Don't have an account? 
-            <a href="signup.html">
-                <button>Signup</button>
-              </a> 
-        </p>
     </section>
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("supportForm").addEventListener("submit", function(event) {
             event.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            // Retrieve stored credentials
-            const storedUsername = localStorage.getItem("username");
-            const storedPassword = localStorage.getItem("password");
-
-            if (username === storedUsername && password === storedPassword) {
-                alert("Login Successful!");
-                window.location.href = "dashboard.html"; // Redirect to the dashboard
-            } else {
-                alert("Incorrect Username or Password! Please try again.");
-            }
+            alert("Your request has been submitted. Our support team will contact you soon!");
         });
     </script>
 </body>

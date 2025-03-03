@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIBIL Score Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .meter {
+            width: 300px;
+            height: 150px;
+            background: conic-gradient(
+                red 0deg 72deg,
+                orange 72deg 144deg,
+                yellow 144deg 216deg,
+                green 216deg 288deg,
+                limegreen 288deg 360deg
+            );
+            border-radius: 150px 150px 0 0;
+            margin: 50px auto;
+            position: relative;
+        }
+        .needle {
+            width: 6px;
+            height: 80px;
+            background: black;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform-origin: bottom;
+            transform: rotate(0deg);
+            transition: transform 1s ease-in-out;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CIBIL Score Tracker</h1>
+    <div class="meter">
+        <div class="needle" id="needle"></div>
+    </div>
+    <p class="score">Score: <span id="score">750</span></p>
+    <input type="number" id="scoreInput" placeholder="Enter Score (300-900)" min="300" max="900">
+    <button onclick="updateScore()">Update Score</button>
+
+    <script>
+        function updateScore() {
+            let score = document.getElementById("scoreInput").value;
+            if (score < 300 || score > 900) {
+                alert("Please enter a score between 300 and 900");
+                return;
+            }
+            document.getElementById("score").innerText = score;
+            
+            let angle = ((score - 300) / 600) * 180 - 90; 
+            document.getElementById("needle").style.transform = `rotate(${angle}deg)`;
+        }
+    </script>
+</body>
+</html>

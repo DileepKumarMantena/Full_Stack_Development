@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FortuneTrust</title>
+    <title>FortuneTrust </title>
     <link rel="stylesheet" href="assets/style.css">
     <style>
         body {
@@ -33,7 +33,12 @@
         h2 {
             color: #0073e6;
         }
-        input {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, select {
             width: 80%;
             padding: 10px;
             margin: 10px 0;
@@ -59,39 +64,35 @@
         <h1>FortuneTrust </h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="signup.html">Signup</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="support.html">Support</a>
         </nav>
     </header>
     <section>
-        <h2>Access Your Account</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Enter Username" required><br>
-            <input type="password" id="password" placeholder="Enter Password" required><br>
-            <button type="submit">Login</button>
+        <h2>Loan Application</h2>
+        <form id="loanForm">
+            <select id="loanType" required>
+                <option value="" disabled selected>Select Loan Type</option>
+                <option value="personal">Personal Loan</option>
+                <option value="home">Home Loan</option>
+                <option value="car">Car Loan</option>
+                <option value="education">Education Loan</option>
+            </select>
+            <input type="number" id="amount" placeholder="Loan Amount (₹)" required>
+            <input type="number" id="tenure" placeholder="Loan Tenure (Years)" required>
+            <input type="number" id="income" placeholder="Your Annual Income (₹)" required>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Apply Now</button>
         </form>
-        <p>Don't have an account? 
-            <a href="signup.html">
-                <button>Signup</button>
-              </a> 
-        </p>
     </section>
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("loanForm").addEventListener("submit", function(event) {
             event.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            // Retrieve stored credentials
-            const storedUsername = localStorage.getItem("username");
-            const storedPassword = localStorage.getItem("password");
-
-            if (username === storedUsername && password === storedPassword) {
-                alert("Login Successful!");
-                window.location.href = "dashboard.html"; // Redirect to the dashboard
-            } else {
-                alert("Incorrect Username or Password! Please try again.");
-            }
+            alert("Loan Application Submitted Successfully!");
+            window.location.href = "dashboard.html";
         });
     </script>
 </body>
