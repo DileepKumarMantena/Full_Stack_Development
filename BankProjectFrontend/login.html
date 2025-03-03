@@ -33,10 +33,6 @@
         h2 {
             color: #0073e6;
         }
-        p {
-            line-height: 1.6;
-            color: #333;
-        }
         input {
             width: 80%;
             padding: 10px;
@@ -68,7 +64,6 @@
     </header>
     <section>
         <h2>Access Your Account</h2>
-        <p>Securely log in to manage your banking needs anytime, anywhere.</p>
         <form id="loginForm">
             <input type="text" id="username" placeholder="Enter Username" required><br>
             <input type="password" id="password" placeholder="Enter Password" required><br>
@@ -80,6 +75,24 @@
               </a> 
         </p>
     </section>
-    <script src="assets/script.js"></script>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Retrieve stored credentials
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            if (username === storedUsername && password === storedPassword) {
+                alert("Login Successful!");
+                window.location.href = "dashboard.html"; // Redirect to the dashboard
+            } else {
+                alert("Incorrect Username or Password! Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>

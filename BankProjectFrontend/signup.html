@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfer Money - MyBank</title>
+    <title>Signup - MyBank</title>
     <link rel="stylesheet" href="assets/style.css">
     <style>
         body {
@@ -26,23 +26,17 @@
             background: white;
             padding: 30px;
             margin: 20px auto;
-            width: 80%;
+            width: 50%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
             color: #0073e6;
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
         input {
-            margin: 10px 0;
-            padding: 10px;
             width: 80%;
-            max-width: 300px;
+            padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -62,26 +56,40 @@
 </head>
 <body>
     <header>
-        <h1>Transfer Money - MyBank</h1>
+        <h1>Create Your Account - MyBank</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="about.html">About</a>
+            <a href="login.html">Login</a>
         </nav>
     </header>
     <section>
-        <h2>Transfer Funds</h2>
-        <form id="transferForm">
-            <input type="text" id="receiver" placeholder="Receiver's Name" required><br>
-            <input type="number" id="amount" placeholder="Amount" required><br>
-            <button type="submit">Send</button>
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Enter Username" required><br>
+            <input type="password" id="password" placeholder="Enter Password" required><br>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+            <button type="submit">Sign Up</button>
         </form>
     </section>
     <script>
-        document.getElementById("transferForm").addEventListener("submit", function(event) {
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            alert("Transaction Successful!");
-            window.location.href = "dashboard.html";
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Store credentials in local storage
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Signup Successful! You can now log in.");
+            window.location.href = "login.html"; // Redirect to login page
         });
     </script>
 </body>
