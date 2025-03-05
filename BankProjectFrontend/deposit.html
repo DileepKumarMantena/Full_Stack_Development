@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortuneTrust</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0073e6;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FortuneTrust</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Deposit Money</h2>
+        <form id="transferForm">
+            <input type="text" id="holder" placeholder="Account Holder's Name" required><br>
+            <input type="number" id="amount" placeholder="Amount" required><br>
+            <input type="number" id="accountnumber" placeholder="accountnumber" required><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById("transferForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const receiver = document.getElementById("holder").value;
+            const amount = document.getElementById("amount").value;
+            const accountnumber = document.getElementById("accountnumber").value;
+
+            if (amount <= 0) {
+                alert("Amount must be greater than 0.");
+                return;
+            }
+
+            alert(`Deposit Successful !\nSent $${amount} to ${receiver} and ${accountnumber}`);
+            window.location.href = "dashboard.html"; // Redirect back to dashboard
+        });
+    </script>
+</body>
+</html>

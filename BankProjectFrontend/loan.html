@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FortuneTrust </title>
+    <title>FortuneTrust - Loan Application</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,33 +27,50 @@
             background: white;
             padding: 30px;
             margin: 20px auto;
-            width: 50%;
+            width: 40%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
         h2 {
             color: #0073e6;
+            text-align: center;
         }
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        input, select {
-            width: 80%;
-            padding: 10px;
+        .input-container {
+            display: flex;
+            align-items: center;
+            width: 90%;
             margin: 10px 0;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            background: #fff;
+        }
+        .input-container i {
+            margin-right: 10px;
+            color: #0073e6;
+        }
+        .input-container input, .input-container select {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
         }
         button {
             background-color: #0073e6;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            margin-top: 15px;
+            width: 50%;
         }
         button:hover {
             background-color: #005bb5;
@@ -61,7 +79,7 @@
 </head>
 <body>
     <header>
-        <h1>FortuneTrust </h1>
+        <h1>FortuneTrust - Loan Application</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="dashboard.html">Dashboard</a>
@@ -70,21 +88,42 @@
         </nav>
     </header>
     <section>
-        <h2>Loan Application</h2>
+        <h2>Apply for a Loan</h2>
         <form id="loanForm">
-            <select id="loanType" required>
-                <option value="" disabled selected>Select Loan Type</option>
-                <option value="personal">Personal Loan</option>
-                <option value="home">Home Loan</option>
-                <option value="car">Car Loan</option>
-                <option value="education">Education Loan</option>
-            </select>
-            <input type="number" id="amount" placeholder="Loan Amount (₹)" required>
-            <input type="number" id="tenure" placeholder="Loan Tenure (Years)" required>
-            <input type="number" id="income" placeholder="Your Annual Income (₹)" required>
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <div class="input-container">
+                <i class="fas fa-hand-holding-usd"></i>
+                <select id="loanType" required>
+                    <option value="" disabled selected>Select Loan Type</option>
+                    <option value="personal">Personal Loan</option>
+                    <option value="home">Home Loan</option>
+                    <option value="car">Car Loan</option>
+                    <option value="education">Education Loan</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-rupee-sign"></i>
+                <input type="number" id="amount" placeholder="Loan Amount (₹)" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-clock"></i>
+                <input type="number" id="tenure" placeholder="Loan Tenure (Years)" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-money-bill-wave"></i>
+                <input type="number" id="income" placeholder="Your Annual Income (₹)" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </div>
             <button type="submit">Apply Now</button>
         </form>
     </section>

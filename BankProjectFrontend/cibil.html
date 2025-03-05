@@ -40,6 +40,16 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .btn {
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +59,7 @@
     </div>
     <p class="score">Score: <span id="score">750</span></p>
     <input type="number" id="scoreInput" placeholder="Enter Score (300-900)" min="300" max="900">
-    <button onclick="updateScore()">Update Score</button>
+    <button onclick="updateScore()" class="btn">Update Score</button>
 
     <script>
         function updateScore() {
@@ -64,5 +74,6 @@
             document.getElementById("needle").style.transform = `rotate(${angle}deg)`;
         }
     </script>
+    <a href="dashboard.html" class="btn">Dashboard</a>
 </body>
 </html>

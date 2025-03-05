@@ -3,106 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FortuneTrust</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <title>Ticket Booking</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background-color: #f4f4f4;
             text-align: center;
-            margin: 0;
-            padding: 0;
         }
         header {
             background-color: #0073e6;
             color: white;
-            padding: 20px;
-            font-size: 1.5em;
+            padding: 15px;
         }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffcc00;
-        }
-        section {
-            background: white;
-            padding: 40px;
-            margin: 30px auto;
-            width: 80%;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h2 {
-            color: #0073e6;
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-        p {
-            line-height: 1.8;
-            color: #333;
-            font-size: 1.2em;
-        }
-        .features {
+        .container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin: 20px auto;
         }
-        .feature-box {
-            background: #0073e6;
-            color: white;
+        .booking-section {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            width: 250px;
-            text-align: center;
-            font-size: 1.2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
         }
-        .feature-box:hover {
-            transform: scale(1.05);
-            background: #005bb5;
+        .booking-section:hover {
+            background-color: #e6f2ff;
+        }
+        .form-container {
+            display: none;
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .booking-section i {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .ticket {
+            display: none;
+            background: #fff;
+            padding: 15px;
+            border: 1px dashed #0073e6;
+            margin: 20px auto;
+            width: 40%;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>FortuneTrust </h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Signup</a>
-        </nav>
+        <h1>Ticket Booking System</h1>
     </header>
-    <section>
-        <h2>Who We Are</h2>
-        <p>Bank is a leading financial institution dedicated to providing secure and convenient banking solutions. We believe in innovation, security, and customer satisfaction.</p>
-        
-        <h2>Our Mission</h2>
-        <p>We aim to empower individuals and businesses with seamless digital banking services that enhance financial growth and stability.</p>
-        
-        <h2>Why Choose Us?</h2>
-        <div class="features">
-            <div class="feature-box">✔ Trusted by millions of customers worldwide</div>
-            <div class="feature-box">✔ Secure and fast transactions</div>
-            <div class="feature-box">✔ 24/7 customer support</div>
-            <div class="feature-box">✔ Competitive interest rates</div>
-            <div class="feature-box">✔ Easy-to-use mobile and web banking</div>
+
+    <div class="container">
+        <div class="booking-section" onclick="showForm('movie-form')">
+            <i class="fas fa-film"></i>
+            <h3>Movie Tickets</h3>
         </div>
-    </section>
+        <div class="booking-section" onclick="showForm('train-form')">
+            <i class="fas fa-train"></i>
+            <h3>Train Tickets</h3>
+        </div>
+        <div class="booking-section" onclick="showForm('bus-form')">
+            <i class="fas fa-bus"></i>
+            <h3>Bus Tickets</h3>
+        </div>
+    </div>
+
+    <div id="movie-form" class="form-container">
+        <h2>Book Movie Ticket</h2>
+        <label>Movie:</label>
+        <select id="movie">
+            <option value="oppenheimer">Oppenheimer</option>
+            <option value="barbie">Barbie</option>
+            <option value="avatar2">Avatar 2</option>
+        </select><br><br>
+        <label>Seats:</label>
+        <input type="number" id="movie-seats" min="1" max="10"><br><br>
+        <button onclick="bookTicket('movie')">Book Now</button>
+    </div>
+
+    <div id="train-form" class="form-container">
+        <h2>Book Train Ticket</h2>
+        <label>From:</label>
+        <input type="text" id="train-from"><br><br>
+        <label>To:</label>
+        <input type="text" id="train-to"><br><br>
+        <label>Date:</label>
+        <input type="date" id="train-date"><br><br>
+        <button onclick="bookTicket('train')">Book Now</button>
+    </div>
+
+    <div id="bus-form" class="form-container">
+        <h2>Book Bus Ticket</h2>
+        <label>From:</label>
+        <input type="text" id="bus-from"><br><br>
+        <label>To:</label>
+        <input type="text" id="bus-to"><br><br>
+        <label>Date:</label>
+        <input type="date" id="bus-date"><br><br>
+        <button onclick="bookTicket('bus')">Book Now</button>
+    </div>
+
+    <div id="ticket" class="ticket"></div>
+
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.style.display = 'none';
+            });
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function bookTicket(type) {
+            let ticketDetails = "";
+            if (type === 'movie') {
+                ticketDetails = `Movie: ${document.getElementById('movie').value} <br>
+                                Seats: ${document.getElementById('movie-seats').value}`;
+            } else if (type === 'train') {
+                ticketDetails = `From: ${document.getElementById('train-from').value} <br>
+                                To: ${document.getElementById('train-to').value} <br>
+                                Date: ${document.getElementById('train-date').value}`;
+            } else if (type === 'bus') {
+                ticketDetails = `From: ${document.getElementById('bus-from').value} <br>
+                                To: ${document.getElementById('bus-to').value} <br>
+                                Date: ${document.getElementById('bus-date').value}`;
+            }
+            document.getElementById('ticket').innerHTML = `<h3>Your Ticket</h3>${ticketDetails}`;
+            document.getElementById('ticket').style.display = 'block';
+        }
+    </script>
+    <a href="dashboard.html" class="btn">Dashboard</a>
 </body>
 </html>
