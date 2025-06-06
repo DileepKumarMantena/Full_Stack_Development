@@ -48,8 +48,8 @@ def create_item(request):
         'value': value
     }
     
-    # items[item_id_counter] = item
-    # item_id_counter += 1
+    items[item_id_counter] = item
+    item_id_counter += 1
     return json_response(item, status=201)
 
 
