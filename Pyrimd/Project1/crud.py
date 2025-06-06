@@ -82,6 +82,7 @@ def main():
         config.add_route('update_item', '/items/{id}')           # PUT /items/{id}
         config.add_route('delete_item', '/items/{id}')           # DELETE /items/{id}
         config.add_route('get_item', '/items/{id}')              # GET /items/{id}
+        config.add_static_view(name='static', path='static', cache_max_age=3600)
 
         config.scan()
         app = config.make_wsgi_app()
