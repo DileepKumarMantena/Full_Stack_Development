@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port used by your Pyramid app
-EXPOSE 6543
+EXPOSE 6544
 
 # Run the app
 CMD ["python", "crud.py"]

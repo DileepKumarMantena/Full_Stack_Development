@@ -91,6 +91,6 @@ def main():
 
 if __name__ == '__main__':
     app = main()
-    server = make_server('0.0.0.0', 6543, app)
-    print("Serving on http://localhost:6543")
+    server = make_server('0.0.0.0', 6544, app)
+    print("Serving on http://localhost:6544")
     server.serve_forever()
