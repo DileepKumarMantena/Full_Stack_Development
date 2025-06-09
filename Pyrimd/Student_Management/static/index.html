@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <ul id="student-list"></ul>
+
+    <h2>Add Student</h2>
+    <input type="text" id="name" placeholder="Name" />
+    <input type="number" id="age" placeholder="Age" />
+    <input type="text" id="course" placeholder="Course" />
+    <button onclick="addStudent()">Add</button>
+
+    <script>
+        const API_BASE = 'http://localhost:6543';
+
+        async function fetchStudents() {
+            const res = await fetch(`${API_BASE}/students`);
+            const students = await res.json();
+            const list = document.getElementById('student-list');
+            list.innerHTML = '';
+            students.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name} (Age: ${s.age}) - Course: ${s.course}`;
+                const delBtn = document.createElement('button');
+                delBtn.textContent = 'Delete';
+                delBtn.style.marginLeft = '10px';
+                delBtn.onclick = () => deleteStudent(s.id);
+                li.appendChild(delBtn);
+                list.appendChild(li);
+            });
+        }
+
+        async function addStudent() {
+            const name = document.getElementById('name').value;
+            const age = parseInt(document.getElementById('age').value);
+            const course = document.getElementById('course').value;
+            if (!name || !age || !course) {
+                alert('Please fill all fields');
+                return;
+            }
+            await fetch(`${API_BASE}/students`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, age, course})
+            });
+            document.getElementById('name').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('course').value = '';
+            fetchStudents();
+        }
+
+        async function deleteStudent(id) {
+            await fetch(`${API_BASE}/students/${id}`, { method: 'DELETE' });
+            fetchStudents();
+        }
+
+        fetchStudents();
+    </script>
+</body>
+</html>
