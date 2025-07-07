@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with Bot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            background: #ffffff;
+            width: 360px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        form input[name="message"] {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        .bot-reply {
+            background: #f1f0f0;
+            padding: 10px 15px;
+            border-radius: 16px;
+            margin-top: 15px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .logout-link {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Chat with Bot</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input name="message" placeholder="Type your message..." required>
+            <button type="submit">Send</button>
+        </form>
+
+        {% if bot_reply %}
+        <div class="bot-reply">
+            <strong>Bot:</strong> {{ bot_reply }}
+        </div>
+        {% endif %}
+
+        <a class="logout-link" href="{% url 'logout' %}">Logout</a>
+    </div>
+</body>
+</html>
