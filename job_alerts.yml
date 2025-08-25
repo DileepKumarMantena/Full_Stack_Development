@@ -1,0 +1,30 @@
+name: Job Alerts
+
+on:
+  schedule:
+    - cron: "42 3 * * *"  # every day at 03:42 UTC (convert to IST if needed)
+  workflow_dispatch:   # allow manual trigger
+
+jobs:
+  run-job-alerts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Job Alerts Script
+        env:
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: python job_alerts.py
